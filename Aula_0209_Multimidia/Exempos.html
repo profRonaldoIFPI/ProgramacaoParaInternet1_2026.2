@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Aula 4 - Multimídia em HTML5: Imagens, Áudio, Vídeo e a Web Nativa
+    </title>
+  </head>
+  <body>
+    <!-- =================================================================== -->
+    <!-- SLIDE 1: TÍTULO DA AULA                                             -->
+    <!-- =================================================================== -->
+    <header>
+      <h1>Aula 4: Multimídia em HTML</h1>
+      <p><strong>Imagens, Áudio, Vídeo e a Web Nativa</strong></p>
+    </header>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 3: IMAGENS: SEMÂNTICA E ACESSIBILIDADE                         -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>1. Imagens: Semântica e Acessibilidade</h2>
+      <ul>
+        <li>
+          A tag <code>&lt;img&gt;</code> e formatos clássicos: JPEG, PNG, GIF.
+        </li>
+        <li>
+          Atributo <code>alt</code>: O texto alternativo é a voz da imagem.
+        </li>
+        <li>Fundamental para leitores de tela e motores de busca (SEO).</li>
+      </ul>
+
+      <!-- Exemplo prático da tag img com alt -->
+      <img
+        src="media/campus_ifpi.jpg"
+        alt="Fachada principal do campus do IFPI com árvores e estudantes"
+        width="400"
+      />
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 4: AGRUPAMENTO VISUAL: <figure> E <figcaption>                -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>2. Agrupamento Visual: &lt;figure&gt; e &lt;figcaption&gt;</h2>
+      <ul>
+        <li>Associa semanticamente uma imagem à sua legenda.</li>
+        <li>Preserva o fluxo estrutural (DOM) e enriquece a acessibilidade.</li>
+      </ul>
+
+      <!-- Exemplo prático de figure e figcaption -->
+      <figure>
+        <img
+          src="media/grafico_desempenho.png"
+          alt="Gráfico de barras ilustrando o aumento de acessos web"
+          width="450"
+        />
+        <figcaption>Figura 1: gráfico ilustrativo.</figcaption>
+      </figure>
+    </section>
+
+    <hr />
+    <!-- horizontal rule -->
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 5: ÁUDIO NATIVO COM HTML5                                     -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>3. Áudio Nativo com HTML5</h2>
+      <ul>
+        <li><code>controls</code>: Exibe a interface nativa do reprodutor.</li>
+        <li>
+          <code>preload</code>: Comportamento de buffer (<code>none</code>,
+          <code>metadata</code>, <code>auto</code>).
+        </li>
+        <li>
+          <code>autoplay</code>: Inicia a reprodução automaticamente (quando
+          permitido pelo navegador).
+        </li>
+        <li><code>loop</code>: Repetição contínua da faixa de áudio.</li>
+      </ul>
+
+      <!-- Exemplo simples de áudio -->
+      <audio src="media/podcast_aula04.mp3" controls preload="metadata">
+        Seu navegador não suporta áudio nativo.
+      </audio>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 6 & 7: VÍDEO NATIVO COM HTML5 & CODECS                        -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>4. Vídeo Nativo com HTML5</h2>
+      <ul>
+        <li>Reprodução sem plugins externos via <code>&lt;video&gt;</code>.</li>
+        <li>
+          Atributos dimensionais: <code>width</code> e <code>height</code>.
+        </li>
+        <li><code>poster</code>: A capa do vídeo antes do carregamento.</li>
+      </ul>
+
+      <!-- Exemplo básico de vídeo com poster e dimensões -->
+      <video
+        width="480"
+        height="270"
+        controls
+        poster="media/poster_video.jpg"
+        preload="metadata"
+      >
+        <source src="media/aula_multimidia.mp4" type="video/mp4" />
+        Seu navegador não suporta a tag de vídeo.
+      </video>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 8: MÚLTIPLAS FONTES: A CASCATA DE FALLBACK                     -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>5. Múltiplas Fontes: A Cascata de Fallback</h2>
+      <ul>
+        <li>
+          O elemento <code>&lt;source&gt;</code> resolve o dilema dos codecs
+          (MP4/H.264, WebM/VP8, Ogg/Theora).
+        </li>
+        <li>
+          O navegador lê de cima para baixo e executa o primeiro formato
+          compatível.
+        </li>
+        <li>
+          Se nenhum for compatível, exibe o conteúdo de fallback textual com
+          link.
+        </li>
+      </ul>
+
+      <!-- Exemplo com múltiplos <source> e fallback em texto/link -->
+      <video width="480" height="270" controls poster="media/poster_video.jpg">
+        <source src="media/aula_multimidia.webm" type="video/webm" />
+        <source src="media/aula_multimidia.mp4" type="video/mp4" />
+        <source src="media/aula_multimidia.ogv" type="video/ogg" />
+        <p>
+          Seu navegador não suporta vídeo HTML5. Aqui está um
+          <a href="media/aula_multimidia.mp4">link para o vídeo</a>.
+        </p>
+      </video>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 9: ACESSIBILIDADE EM MÍDIA: O ELEMENTO <track>                -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>6. Acessibilidade em Mídia: O Elemento &lt;track&gt;</h2>
+      <ul>
+        <li>
+          Adição de legendas (<code>subtitles</code>), audiodescrição e
+          transcrições (<code>captions</code>).
+        </li>
+        <li>Utiliza arquivos no formato WebVTT (<code>.vtt</code>).</li>
+        <li>
+          Torna o conteúdo acessível para usuários com necessidades auditivas.
+        </li>
+      </ul>
+
+      <video width="480" height="270" controls poster="media/poster_video.jpg">
+        <source src="media/aula_multimidia.mp4" type="video/mp4" />
+        <source src="media/aula_multimidia.webm" type="video/webm" />
+
+        <!-- Faixas de legendas -->
+        <track
+          kind="subtitles"
+          src="media/legendas_pt.vtt"
+          srclang="pt-BR"
+          label="Português"
+          default
+        />
+        <track
+          kind="subtitles"
+          src="media/legendas_en.vtt"
+          srclang="en"
+          label="English"
+        />
+        <track
+          kind="captions"
+          src="media/captions_pt.vtt"
+          srclang="pt-BR"
+          label="Português (CC)"
+        />
+
+        Seu navegador não suporta legendas em HTML5.
+      </video>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 10: INCORPORAÇÃO EXTERNA: O ELEMENTO <iframe>                 -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>7. Incorporação Externa: O Elemento &lt;iframe&gt;</h2>
+      <ul>
+        <li>Cria um contexto de navegador aninhado.</li>
+        <li>
+          Ideal para vídeos do YouTube, Google Maps ou ferramentas externas.
+        </li>
+        <li>
+          Delega processamento e armazenamento para servidores de terceiros.
+        </li>
+      </ul>
+
+      <iframe
+        width="480"
+        height="270"
+        src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+        title="Exemplo de vídeo incorporado via YouTube"
+        frameborder="0"
+        allow="
+          accelerometer;
+          autoplay;
+          clipboard-write;
+          encrypted-media;
+          gyroscope;
+          picture-in-picture;
+        "
+        allowfullscreen
+      >
+      </iframe>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 11: ELEMENTOS LEGADOS: <embed> E <object>                     -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>8. Elementos Legados: &lt;embed&gt; e &lt;object&gt;</h2>
+      <ul>
+        <li>
+          Tags antigas para conteúdo não nativo e plugins genéricos (Flash,
+          Silverlight).
+        </li>
+        <li>
+          Hoje, funcionam como a última linha de defesa na cascata de fallback e
+          para documentos como PDF.
+        </li>
+      </ul>
+
+      <h3>8.1 Elemento <code>&lt;object&gt;</code> com fallback</h3>
+      <object
+        data="media/documento_aula.pdf"
+        type="application/pdf"
+        width="480"
+        height="250"
+      >
+        <p>
+          Seu navegador não possui plugin de PDF integrado.
+          <a href="media/documento_aula.pdf">Clique aqui para baixar o PDF</a>.
+        </p>
+      </object>
+
+      <h3>8.2 Elemento <code>&lt;embed&gt;</code></h3>
+      <embed
+        src="media/animacao_vetorial.svg"
+        type="image/svg+xml"
+        width="300"
+        height="150"
+      />
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 12: INTRODUÇÃO AO <canvas>                                    -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>9. Introdução ao &lt;canvas&gt;</h2>
+      <ul>
+        <li>Uma área de desenho em branco renderizada dinamicamente.</li>
+        <li>Totalmente dependente da API JavaScript.</li>
+        <li>
+          Usado para gráficos, visualizações de dados e jogos no navegador.
+        </li>
+      </ul>
+
+      <canvas id="meuCanvas" width="400" height="150">
+        Seu navegador não suporta o elemento canvas.
+      </canvas>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 13: INTERATIVIDADE: A API DE MÍDIA (JAVASCRIPT)               -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>10. Interatividade: A API de Mídia (JavaScript)</h2>
+      <ul>
+        <li>
+          Controle total sobre o DOM para criar reprodutores personalizados.
+        </li>
+        <li>
+          Métodos principais: <code>play()</code>, <code>pause()</code>,
+          <code>load()</code>.
+        </li>
+        <li>
+          Propriedades principais: <code>volume</code>,
+          <code>currentTime</code>, <code>muted</code>.
+        </li>
+      </ul>
+
+      <!-- Vídeo sem controls para ser operado via script -->
+      <video
+        id="meuVideoJS"
+        width="480"
+        height="270"
+        poster="media/poster_video.jpg"
+      >
+        <source src="media/aula_multimidia.mp4" type="video/mp4" />
+        <source src="media/aula_multimidia.webm" type="video/webm" />
+        Seu navegador não suporta vídeo.
+      </video>
+
+      <br /><br />
+
+      <!-- Botões de controle nativos HTML (sem estilo CSS) -->
+      <button id="btnPlay">play()</button>
+      <button id="btnPause">pause()</button>
+      <button id="btnMute">muted</button>
+      <button id="btnVolMenos">volume -</button>
+      <button id="btnVolMais">volume +</button>
+
+      <p id="infoTempo">Tempo: 00:00 / 00:00</p>
+      <p id="infoStatus">Status: Parado</p>
+    </section>
+
+    <hr />
+
+    <!-- =================================================================== -->
+    <!-- SLIDE 14: MATRIZ DE SÍNTESE: QUAL TAG UTILIZAR?                     -->
+    <!-- =================================================================== -->
+    <section>
+      <h2>11. Matriz de Síntese: Qual tag utilizar?</h2>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Categoria</th>
+            <th>Tags</th>
+            <th>Hospedagem</th>
+            <th>Interatividade Nativa</th>
+            <th>Uso Ideal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mídia Nativa</td>
+            <td>
+              <code>&lt;img&gt;</code>, <code>&lt;audio&gt;</code>,
+              <code>&lt;video&gt;</code>
+            </td>
+            <td>Servidor Próprio</td>
+            <td>Alta</td>
+            <td>Controle total e semântica web.</td>
+          </tr>
+          <tr>
+            <td>Mídia Hospedada</td>
+            <td><code>&lt;iframe&gt;</code></td>
+            <td>Servidor de Terceiros</td>
+            <td>Isolada</td>
+            <td>YouTube, Maps, economia de banda.</td>
+          </tr>
+          <tr>
+            <td>Mídia Programática</td>
+            <td><code>&lt;canvas&gt;</code></td>
+            <td>N/A</td>
+            <td>Via JavaScript</td>
+            <td>Gráficos dinâmicos, renderização JS.</td>
+          </tr>
+          <tr>
+            <td>Legado / Fallback</td>
+            <td><code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code></td>
+            <td>Servidor Próprio</td>
+            <td>Via Plugin</td>
+            <td>PDFs, Flash, suporte legado extremo.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- CÓDIGO JAVASCRIPT BÁSICO (APENAS PARA DEMONSTRAR CANVAS E API DOM)   -->
+    <!-- =================================================================== -->
+    <script>
+      // 1. Renderização básica no Canvas (Slide 12)
+      var canvas = document.getElementById("meuCanvas");
+      if (canvas && canvas.getContext) {
+        var b_context = canvas.getContext("2d");
+
+        // Retângulo preenchido conforme exemplo do slide
+        b_context.fillStyle = "#333333";
+        b_context.fillRect(50, 25, 150, 100);
+
+        // Texto no canvas
+        b_context.fillStyle = "#000000";
+        b_context.font = "14px sans-serif";
+        b_context.fillText("b_context.fillRect(50, 25, 150, 100);", 50, 140);
+      }
+
+      // 2. Interatividade com a API de Mídia via DOM (Slide 13)
+      var videoEl = document.getElementById("meuVideoJS");
+      var btnPlay = document.getElementById("btnPlay");
+      var btnPause = document.getElementById("btnPause");
+      var btnMute = document.getElementById("btnMute");
+      var btnVolMenos = document.getElementById("btnVolMenos");
+      var btnVolMais = document.getElementById("btnVolMais");
+      var infoTempo = document.getElementById("infoTempo");
+      var infoStatus = document.getElementById("infoStatus");
+
+      function formatarSegundos(s) {
+        var min = Math.floor(s / 60);
+        var seg = Math.floor(s % 60);
+        return (
+          (min < 10 ? "0" + min : min) + ":" + (seg < 10 ? "0" + seg : seg)
+        );
+      }
+
+      if (videoEl) {
+        btnPlay.addEventListener("click", function () {
+          videoEl.play();
+          infoStatus.textContent = "Status: Reproduzindo (video.play())";
+        });
+
+        btnPause.addEventListener("click", function () {
+          videoEl.pause();
+          infoStatus.textContent = "Status: Pausado (video.pause())";
+        });
+
+        btnMute.addEventListener("click", function () {
+          videoEl.muted = !videoEl.muted;
+          infoStatus.textContent = "Status: Muted = " + videoEl.muted;
+        });
+
+        btnVolMenos.addEventListener("click", function () {
+          if (videoEl.volume >= 0.1) {
+            videoEl.volume = Math.max(0, videoEl.volume - 0.1);
+          }
+          infoStatus.textContent =
+            "Status: Volume = " + Math.round(videoEl.volume * 100) + "%";
+        });
+
+        btnVolMais.addEventListener("click", function () {
+          if (videoEl.volume <= 0.9) {
+            videoEl.volume = Math.min(1, videoEl.volume + 0.1);
+          }
+          infoStatus.textContent =
+            "Status: Volume = " + Math.round(videoEl.volume * 100) + "%";
+        });
+
+        videoEl.addEventListener("timeupdate", function () {
+          var atual = formatarSegundos(videoEl.currentTime);
+          var total = isNaN(videoEl.duration)
+            ? "00:00"
+            : formatarSegundos(videoEl.duration);
+          infoTempo.textContent = "Tempo: " + atual + " / " + total;
+        });
+      }
+    </script>
+  </body>
+</html>

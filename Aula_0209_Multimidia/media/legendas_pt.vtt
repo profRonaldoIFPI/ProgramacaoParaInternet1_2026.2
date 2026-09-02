@@ -1,0 +1,10 @@
+WEBVTT - Legendas em Português
+
+00:00:00.000 --> 00:00:03.000
+Bem-vindos à aula sobre Multimídia em HTML5.
+
+00:00:03.500 --> 00:00:07.000
+Hoje aprenderemos sobre tags de vídeo, áudio e acessibilidade.
+
+00:00:07.500 --> 00:00:12.000
+O elemento track nos permite exibir legendas sincronizadas com facilidade.

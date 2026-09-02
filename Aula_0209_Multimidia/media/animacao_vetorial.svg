@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150" width="300" height="150">
+    <rect width="300" height="150" fill="#f0f4f8" rx="8" />
+    <circle cx="50" cy="75" r="25" fill="#0f4c81">
+        <animate attributeName="cx" values="50;250;50" dur="4s" repeatCount="indefinite" />
+        <animate attributeName="fill" values="#0f4c81;#e65100;#2e7d32;#0f4c81" dur="4s" repeatCount="indefinite" />
+    </circle>
+    <text x="150" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333333">
+        Animação SVG Integrada
+    </text>
+</svg>

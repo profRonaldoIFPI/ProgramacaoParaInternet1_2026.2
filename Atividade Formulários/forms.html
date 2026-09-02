@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prática de Formulário HTML5</title>
+  </head>
+  <body>
+    <h1>Cadastro de Desenvolvedor</h1>
+
+    <form action="#" method="POST" enctype="multipart/form-data">
+      <!-- Seção 1: Dados Pessoais -->
+      <fieldset>
+        <legend>Dados Pessoais</legend>
+
+        <p>
+          <label for="nome">Nome Completo:</label><br />
+          <input
+            type="text"
+            id="nome"
+            name="nome"
+            required
+            minlength="3"
+            placeholder="Ex: João da Silva"
+          />
+        </p>
+
+        <p>
+          <label for="email">E-mail:</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="exemplo@dominio.com"
+          />
+        </p>
+
+        <p>
+          <label for="senha">Senha:</label><br />
+          <input
+            type="password"
+            id="senha"
+            name="senha"
+            required
+            minlength="8"
+            placeholder="Mínimo 8 caracteres"
+          />
+        </p>
+
+        <p>
+          <label for="nascimento">Data de Nascimento:</label><br />
+          <input type="date" id="nascimento" name="nascimento" required />
+        </p>
+
+        <p>
+          <label for="telefone">Telefone / Celular:</label><br />
+          <input
+            type="tel"
+            id="telefone"
+            name="telefone"
+            pattern="[0-9]{2} [0-9]{5}-[0-9]{4}"
+            placeholder="86 99999-9999"
+          />
+          <small>(Formato: DD 99999-9999)</small>
+        </p>
+      </fieldset>
+
+      <!-- Seção 2: Preferências -->
+      <fieldset>
+        <legend>Preferências e Conhecimentos</legend>
+
+        <p>
+          <label for="experiencia">Nível de Experiência Geral (1 a 5):</label
+          ><br />
+          <input
+            type="range"
+            id="experiencia"
+            name="experiencia"
+            min="1"
+            max="5"
+            value="3"
+            list="marcadores"
+          />
+          <datalist id="marcadores">
+            <option value="1" label="Iniciante"></option>
+            <option value="3" label="Intermediário"></option>
+            <option value="5" label="Avançado"></option>
+          </datalist>
+        </p>
+
+        <p>
+          <label for="escolaridade">Grau de Escolaridade:</label><br />
+          <select id="escolaridade" name="escolaridade" required>
+            <option value="" disabled selected>Selecione uma opção...</option>
+            <option value="medio">Ensino Médio</option>
+            <option value="tecnico">Técnico</option>
+            <option value="graduacao">Graduação</option>
+            <option value="pos">Pós-Graduação / Mestrado</option>
+          </select>
+        </p>
+
+        <p>Áreas de Interesse:</p>
+        <input
+          type="checkbox"
+          id="frontend"
+          name="interesses"
+          value="frontend"
+        />
+        <label for="frontend">Front-end</label><br />
+        <input type="checkbox" id="backend" name="interesses" value="backend" />
+        <label for="backend">Back-end</label><br />
+        <input type="checkbox" id="iot" name="interesses" value="iot" />
+        <label for="iot">IoT e Sistemas Embarcados</label><br />
+        <input type="checkbox" id="dados" name="interesses" value="dados" />
+        <label for="dados">Banco de Dados</label>
+
+        <p>Frequência de E-mails/Notificações:</p>
+        <input
+          type="radio"
+          id="notif_diaria"
+          name="notificacao"
+          value="diaria"
+          checked
+        />
+        <label for="notif_diaria">Diária</label><br />
+        <input
+          type="radio"
+          id="notif_semanal"
+          name="notificacao"
+          value="semanal"
+        />
+        <label for="notif_semanal">Semanal</label><br />
+        <input
+          type="radio"
+          id="notif_nenhuma"
+          name="notificacao"
+          value="nenhuma"
+        />
+        <label for="notif_nenhuma">Não receber</label>
+      </fieldset>
+
+      <!-- Seção 3: Anexos -->
+      <fieldset>
+        <legend>Documentação</legend>
+        <p>
+          <label for="foto">Foto de Perfil:</label><br />
+          <input type="file" id="foto" name="foto" accept=".png, .jpg, .jpeg" />
+        </p>
+        <p>
+          <label for="bio">Breve Biografia / Apresentação:</label><br />
+          <textarea
+            id="bio"
+            name="bio"
+            rows="4"
+            cols="40"
+            maxlength="300"
+            placeholder="Conte um pouco sobre seus projetos..."
+          ></textarea>
+        </p>
+      </fieldset>
+
+      <!-- Seção 4: Termos e Envio -->
+      <fieldset>
+        <legend>Finalização</legend>
+        <p>
+          <input type="checkbox" id="termos" name="termos" required />
+          <label for="termos"
+            >Declaro que li e concordo com os termos e condições.</label
+          >
+        </p>
+
+        <button type="submit">Enviar Cadastro</button>
+        <!-- <button type="reset">Limpar Campos</button> -->
+        <input type="reset" value="Limpar Campos" />
+      </fieldset>
+    </form>
+  </body>
+</html>
