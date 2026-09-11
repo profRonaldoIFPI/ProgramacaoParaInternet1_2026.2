@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabarito - Aula 5.1: Introdução ao CSS e Seletores</title>
+    <!-- Importação de fonte moderna do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Link para a folha de estilos externa do gabarito -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================================= -->
+    <!-- CABEÇALHO DO SITE (Header e Navegação)                         -->
+    <!-- ============================================================= -->
+    <header id="cabecalho-principal">
+        <div class="container">
+            <h1 id="logo">WebDev IFPI</h1>
+            <p class="subtitulo">Aprenda os fundamentos da estilização com CSS3</p>
+            
+            <nav class="menu-navegacao">
+                <ul>
+                    <li><a href="#inicio" class="ativo">Início</a></li>
+                    <li><a href="#artigos">Artigos</a></li>
+                    <li><a href="#exemplos">Seletores</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="https://developer.mozilla.org" target="_blank" class="link-externo">MDN Web Docs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================================= -->
+    <!-- CONTEÚDO PRINCIPAL                                            -->
+    <!-- ============================================================= -->
+    <main id="conteudo-principal" class="container">
+
+        <!-- Seção de Destaque / Apresentação -->
+        <section id="banner-destaque" class="secao destaque">
+            <h2>Por que o CSS foi criado?</h2>
+            <p class="introducao">
+                Em 1996, <strong>Håkon Wium Lie</strong> e <strong>Bert Bos</strong> propuseram o CSS com o objetivo de separar o <em>conteúdo</em> (HTML) da <em>apresentação</em> (estilo visual).
+            </p>
+            <p>
+                Antes do CSS, os desenvolvedores usavam tags como <code>&lt;font&gt;</code> e atributos como <code>bgcolor</code> diretamente nas tags HTML, tornando a manutenção extremamente difícil e a acessibilidade prejudicada.
+            </p>
+            <a href="#exemplos" class="btn btn-primario">Explorar Seletores</a>
+        </section>
+
+        <!-- Seção 1: Seletores Básicos e Combinadores -->
+        <section id="artigos" class="secao">
+            <h2>1. Seletores Básicos e Combinadores</h2>
+            <p class="descricao-secao">Observe as relações de parentesco entre as tags abaixo e como as cores reagem:</p>
+
+            <article class="card">
+                <h3>O que são Combinadores?</h3>
+                <p>Os combinadores explicam a relação entre dois ou mais seletores:</p>
+                
+                <div class="painel-exemplo">
+                    <p>Parágrafo 1 dentro do painel (filho direto <code>&gt;</code> e descendente).</p>
+                    <div class="sub-painel">
+                        <p>Parágrafo 2 dentro de um sub-painel (descendente com espaço, mas NÃO filho direto de <code>.painel-exemplo</code>).</p>
+                    </div>
+                </div>
+
+                <p class="alerta">Parágrafo com a classe <code>.alerta</code> (utilizado para demonstrar irmãos adjacentes e gerais).</p>
+                <p>Parágrafo irmão logo abaixo do alerta (afetado pelo seletor adjacente <code>+</code>).</p>
+                <p>Outro parágrafo irmão (afetado apenas pelo seletor geral <code>~</code>).</p>
+            </article>
+        </section>
+
+        <!-- Seção 2: Seletores de Atributo, Pseudoclasses e Pseudoelementos -->
+        <section id="exemplos" class="secao">
+            <h2>2. Seletores Avançados & Box Model</h2>
+
+            <!-- Exemplo de Lista para Pseudoclasses Estruturais (:first-child, :nth-child, etc) -->
+            <div class="card">
+                <h3>Lista de Tópicos (Teste de :nth-child e Pseudoclasses)</h3>
+                <ul class="lista-topicos">
+                    <li>1. Sintaxe da Regra CSS: Seletor { propriedade: valor; }</li>
+                    <li>2. Cores: Nomes, Hexadecimal (#333), RGB(r, g, b) e HSL</li>
+                    <li>3. Tipografia: font-family, font-size, line-height, text-align</li>
+                    <li>4. Box Model: Margin, Border, Padding e Content</li>
+                    <li>5. Display: block, inline, inline-block e none</li>
+                </ul>
+            </div>
+
+            <!-- Formulário para testar Seletores de Atributo e Pseudoclasses de Interação (:hover, :focus, :disabled) -->
+            <div class="card">
+                <h3>Formulário de Inscrição (Seletores de Atributo e Estados)</h3>
+                <form id="form-contato" action="#" method="post">
+                    <div class="campo">
+                        <label for="nome">Nome Completo:</label>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="email">E-mail Institucional:</label>
+                        <input type="email" id="email" name="email" placeholder="aluno@ifpi.edu.br" required>
+                    </div>
+
+                    <div class="campo">
+                        <label for="assunto">Nível de Conhecimento:</label>
+                        <select id="assunto" name="assunto">
+                            <option value="iniciante">Iniciante em Web</option>
+                            <option value="intermediario">Já conheço um pouco de HTML</option>
+                            <option value="avancado">Já crio páginas completas</option>
+                        </select>
+                    </div>
+
+                    <div class="campo-botoes">
+                        <button type="submit" class="btn btn-sucesso">Cadastrar</button>
+                        <button type="button" class="btn btn-desabilitado" disabled>Botão Desabilitado</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Demonstração de Especificidade -->
+            <div class="card">
+                <h3>Teste de Especificidade e Cascata</h3>
+                <p id="texto-especifico" class="texto-verde texto-azul">
+                    Qual cor prevalece neste parágrafo? (Tag [1] vs Classe [10] vs ID [100] vs Inline [1000])
+                </p>
+                <div class="explicacao-especificidade">
+                    <ul>
+                        <li>Seletor de Tipo (Tag <code>p</code>): peso <strong>1</strong></li>
+                        <li>Seletor de Classe (<code>.texto-azul</code>): peso <strong>10</strong></li>
+                        <li>Seletor de ID (<code>#texto-especifico</code>): peso <strong>100</strong> (Vencedor no CSS!)</li>
+                        <li>Estilo Inline (<code>style="..."</code>): peso <strong>1000</strong> (Vence o ID)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================= -->
+    <!-- RODAPÉ                                                        -->
+    <!-- ============================================================= -->
+    <footer id="rodape-principal">
+        <div class="container">
+            <p>&copy; 2026 - Programação para Internet I | Prof. Ronaldo Borges | IFPI Campus Floriano</p>
+        </div>
+    </footer>
+
+</body>
+</html>

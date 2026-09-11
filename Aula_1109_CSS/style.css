@@ -1,3 +1,4 @@
+
 /* ==========================================================================
    AULA 5.1: INTRODUÇÃO AO CSS E SELETORES
    Disciplina: Programação para Internet I - IFPI Campus Floriano
@@ -9,8 +10,11 @@
    - O seletor universal (*) atinge todos os elementos da página.
    - Usado frequentemente para zerar margens e configurar box-sizing.
    -------------------------------------------------------------------------- */
+
 * {
     /* Experimente: margin: 0; padding: 0; box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
 }
 
 /* --------------------------------------------------------------------------
@@ -19,10 +23,13 @@
    -------------------------------------------------------------------------- */
 body {
     /* Experimente: font-family, line-height, color, background-color */
+    font-family: Arial;
+    background-color: rgba(224, 224, 224, 0.5);
 }
 
 h1, h2, h3 {
     /* Experimente agrupar seletores separados por vírgula */
+    font-size: 14pt;    
 }
 
 p {
@@ -31,6 +38,7 @@ p {
 
 a {
     /* Estilização de links */
+    text-decoration: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -39,14 +47,21 @@ a {
    -------------------------------------------------------------------------- */
 .container {
     /* Experimente: width: 90%; max-width: 1000px; margin: 0 auto; */
+    margin: 5px; 
+    border: 1px solid red;
 }
 
 .card {
     /* Experimente: background-color, border, border-radius, padding, margin-bottom */
+    border: 1px solid blue;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
 }
 
 .destaque {
     /* Estilo para elementos em destaque */
+    border: 1px solid green;
 }
 
 .alerta {
@@ -59,6 +74,10 @@ a {
    -------------------------------------------------------------------------- */
 #cabecalho-principal {
     /* Experimente: background-color, color, padding, text-align */
+    background-color: rgb(0, 0, 75);
+    border-bottom: 5px solid blue;
+    color: aliceblue;
+    text-align: center;
 }
 
 #logo {
@@ -67,6 +86,12 @@ a {
 
 #rodape-principal {
     /* Estilização do rodapé */
+    background-color: darkslateblue;
+    color: lightgray;
+    font-size: 8pt;
+    text-align: center;
+    height: 50px;
+    align-items: center;
 }
 
 /* --------------------------------------------------------------------------
@@ -78,6 +103,10 @@ a {
    -------------------------------------------------------------------------- */
 
 /* Descendente: todos os <a> dentro de .menu-navegacao */
+
+.menu-navegacao {
+    display: flex;
+}
 .menu-navegacao a {
     
 }

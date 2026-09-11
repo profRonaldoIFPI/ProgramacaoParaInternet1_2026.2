@@ -1,0 +1,425 @@
+/* ==========================================================================
+   GABARITO COMPLETO - AULA 5.1: CSS E SELETORES
+   Disciplina: Programação para Internet I
+   Professor: Ronaldo Borges (IFPI - Campus Floriano)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SELETOR UNIVERSAL E RESET BÁSICO (Box Model)
+   - O seletor universal (*) seleciona absolutamente TODOS os elementos.
+   - O 'box-sizing: border-box' garante que padding e border sejam somados
+     DENTRO da largura (width) e altura (height) definidas.
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* --------------------------------------------------------------------------
+   2. SELETORES DE TIPO (TAGS) E TIPOGRAFIA GERAL
+   - Aplicam regras gerais às tags do HTML.
+   -------------------------------------------------------------------------- */
+body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1e293b;            /* Cinza escuro elegante */
+    background-color: #f8fafc; /* Fundo suave off-white */
+}
+
+/* Agrupamento de seletores: aplica as mesmas propriedades para h1, h2 e h3 */
+h1, h2, h3 {
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #1e40af; /* Azul para destacar subseções */
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Estilo para trechos de código em linha */
+code {
+    font-family: 'Fira Code', monospace;
+    background-color: #e2e8f0;
+    color: #b91c1c;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* --------------------------------------------------------------------------
+   3. SELETORES DE CLASSE (.nome-da-classe)
+   - Reutilizáveis em várias partes da interface.
+   -------------------------------------------------------------------------- */
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin-left: auto;
+    margin-right: auto; /* Centraliza o bloco na tela */
+}
+
+.secao {
+    margin: 2rem 0;
+}
+
+.descricao-secao {
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 1.25rem;
+}
+
+/* Card com sombra suave, bordas arredondadas e padding */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+}
+
+.destaque {
+    background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    border: 1px solid #bfdbfe;
+    border-left: 6px solid #2563eb;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.alerta {
+    background-color: #fef2f2;
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+    padding: 0.75rem 1rem;
+    border-radius: 0 6px 6px 0;
+    font-weight: 500;
+}
+
+/* Estilos de botões */
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-primario {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-sucesso {
+    background-color: #16a34a;
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   4. SELETORES DE ID (#nome-do-id)
+   - Exclusivos para um único elemento no documento.
+   -------------------------------------------------------------------------- */
+#cabecalho-principal {
+    background-color: #0f172a; /* Azul marinho escuro */
+    color: #f8fafc;
+    padding: 2.5rem 0 1.5rem 0;
+    text-align: center;
+    border-bottom: 4px solid #3b82f6;
+}
+
+#logo {
+    color: #38bdf8;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.25rem;
+}
+
+#cabecalho-principal .subtitulo {
+    color: #94a3b8;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+#rodape-principal {
+    background-color: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 1.75rem 0;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    border-top: 1px solid #334155;
+}
+
+/* --------------------------------------------------------------------------
+   5. COMBINADORES E RELAÇÕES
+   - Descendente (espaço)
+   - Filho direto (>)
+   - Irmão adjacente (+)
+   - Irmão geral (~)
+   -------------------------------------------------------------------------- */
+
+/* A. Descendente (espaço): qualquer <a> que esteja dentro do menu de navegação */
+.menu-navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.menu-navegacao a {
+    color: #e2e8f0;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+/* B. Filho direto (>): estiliza apenas <p> que são filhos imediatos de .painel-exemplo */
+.painel-exemplo {
+    background-color: #f1f5f9;
+    padding: 1rem;
+    border: 1px dashed #cbd5e1;
+    border-radius: 6px;
+    margin: 1rem 0;
+}
+
+.painel-exemplo > p {
+    color: #0369a1;
+    font-weight: 600;
+}
+
+.sub-painel {
+    background-color: #ffffff;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border-left: 3px solid #f59e0b;
+}
+
+/* C. Irmão Adjacente (+): afeta APENAS o primeiro <p> imediatamente após .alerta */
+.alerta + p {
+    color: #b45309;
+    font-weight: 600;
+    padding-left: 0.5rem;
+    border-left: 3px solid #f59e0b;
+    margin-top: 0.75rem;
+}
+
+/* D. Irmão Geral (~): afeta todos os <p> subsequentes após .alerta */
+.alerta ~ p {
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   6. SELETORES DE ATRIBUTOS
+   - [atributo], [atributo="valor"], [atributo^="valor"], [atributo$="valor"]
+   -------------------------------------------------------------------------- */
+
+/* Estilização para inputs de texto e e-mail */
+input[type="text"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo {
+    margin-bottom: 1.25rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.campo-botoes {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+/* Links que abrem em nova aba (target="_blank") */
+a[target="_blank"] {
+    color: #38bdf8;
+}
+
+/* Links cujo protocolo começa com https:// */
+a[href^="https://"] {
+    text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   7. PSEUDOCLASSES (Estados e Seleções Estruturais)
+   -------------------------------------------------------------------------- */
+
+/* A. Estados de interação (:hover, :focus, :active, :disabled) */
+.menu-navegacao a:hover {
+    background-color: #1e293b;
+    color: #38bdf8;
+}
+
+.menu-navegacao a.ativo {
+    background-color: #2563eb;
+    color: #ffffff;
+}
+
+.btn-primario:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.btn-sucesso:hover {
+    background-color: #15803d;
+}
+
+/* Foco em campos de formulário */
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Botão desabilitado */
+button:disabled,
+.btn-desabilitado {
+    background-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* B. Pseudoclasses estruturais (:first-child, :last-child, :nth-child) */
+.lista-topicos {
+    list-style: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.lista-topicos li {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+/* Primeiro item da lista */
+.lista-topicos li:first-child {
+    font-weight: 600;
+    border-left: 4px solid #2563eb;
+}
+
+/* Último item da lista */
+.lista-topicos li:last-child {
+    border-bottom: none;
+}
+
+/* Linhas pares (efeito zebrado) */
+.lista-topicos li:nth-child(even) {
+    background-color: #f8fafc;
+}
+
+/* Linhas ímpares */
+.lista-topicos li:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   8. PSEUDOELEMENTOS
+   - ::first-letter, ::before, ::after, ::placeholder
+   -------------------------------------------------------------------------- */
+
+/* Letra capitular no parágrafo de introdução */
+.introducao::first-letter {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2563eb;
+    float: left;
+    line-height: 1;
+    margin-right: 8px;
+}
+
+/* Adiciona um ícone visual ao final de links externos */
+.link-externo::after {
+    content: " ↗";
+    font-size: 0.85em;
+}
+
+/* Estilização do texto de dica (placeholder) */
+::placeholder {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+/* --------------------------------------------------------------------------
+   9. ESPECIFICIDADE E CASCATA (Demonstração prática)
+   - Ordem de peso:
+     1. Tag (p) = 1
+     2. Classe (.texto-verde, .texto-azul) = 10 cada
+     3. ID (#texto-especifico) = 100  -> VENCE!
+     4. Inline style (style="...") = 1000
+   -------------------------------------------------------------------------- */
+
+/* Peso 1 (Tag) */
+p {
+    color: #334155;
+}
+
+/* Peso 10 (Classe) */
+.texto-azul {
+    color: #2563eb;
+}
+
+/* Peso 11 (Tag + Classe) */
+p.texto-verde {
+    color: #16a34a;
+}
+
+/* Peso 100 (ID) - Este seletor ganha dos anteriores e define a cor */
+#texto-especifico {
+    color: #dc2626; /* Vermelho escuro */
+    font-weight: 700;
+    padding: 0.5rem;
+    background-color: #fee2e2;
+    border-radius: 4px;
+}
+
+.explicacao-especificidade {
+    margin-top: 1rem;
+    background-color: #f1f5f9;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.explicacao-especificidade ul {
+    margin-left: 1.5rem;
+}
