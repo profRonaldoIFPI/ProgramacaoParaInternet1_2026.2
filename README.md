@@ -36,6 +36,15 @@ A disciplina aborda a arquitetura da Web e o desenvolvimento da camada de aprese
 │   └── index.html
 ├── Aula_1908/                  # Aula de 19/08 - Formulários em HTML5
 │   └── form.html
+├── Aula_1109_CSS/              # Aula de 11/09 - Introdução ao CSS, Seletores e Box Model
+│   ├── index.html              # HTML base para acompanhamento em sala
+│   ├── style.css               # CSS inicial com seções comentadas para a turma
+│   ├── conteúdo.md             # Tópicos e ementa da aula
+│   ├── Aula 5.1: CSS e Seletores.pdf # Slides da aula
+│   └── gabarito/               # Gabarito completo da aula
+│       ├── index.html
+│       ├── style.css
+│       └── ROTEIRO_AULA.md
 ├── Referencias/                # Livros e materiais complementares em PDF
 ├── Slides/                     # Apresentações utilizadas nas aulas
 ├── plano_2016.2.pdf            # Plano de ensino da disciplina
@@ -51,6 +60,7 @@ A disciplina aborda a arquitetura da Web e o desenvolvimento da camada de aprese
 | **Apresentação** | Plano de ensino e introdução à disciplina | — | `Slides/Aula 0_Plano de disciplina.pdf` |
 | **07/08** | Fundamentos da Web & Estrutura Semântica HTML5 | [`Aula_0708/index.html`](Aula_0708/index.html) | `Slides/Aula_1_Fundamentos da web.pdf`<br>`Slides/Aula_2__fundamentos_de_HTML.pdf` |
 | **19/08** | Formulários em HTML5 (campos, inputs, labels, métodos) | [`Aula_1908/form.html`](Aula_1908/form.html) | `Slides/Aula_3_HTML5_Forms.pdf` |
+| **11/09** | Introdução ao CSS, Seletores, Combinadores, Box Model e Especificidade | [`Aula_1109_CSS/`](Aula_1109_CSS/) | `Aula_1109_CSS/conteúdo.md`<br>`Aula_1109_CSS/Aula 5.1: CSS e Seletores.pdf`<br>[`Aula_1109_CSS/gabarito/`](Aula_1109_CSS/gabarito/) |
 
 ---
 

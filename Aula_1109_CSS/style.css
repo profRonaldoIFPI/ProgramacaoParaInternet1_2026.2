@@ -1,0 +1,173 @@
+/* ==========================================================================
+   AULA 5.1: INTRODUÇÃO AO CSS E SELETORES
+   Disciplina: Programação para Internet I - IFPI Campus Floriano
+   Prof. Ronaldo Borges
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. SELETOR UNIVERSAL E RESET BÁSICO (Box Model)
+   - O seletor universal (*) atinge todos os elementos da página.
+   - Usado frequentemente para zerar margens e configurar box-sizing.
+   -------------------------------------------------------------------------- */
+* {
+    /* Experimente: margin: 0; padding: 0; box-sizing: border-box; */
+}
+
+/* --------------------------------------------------------------------------
+   2. SELETORES DE TIPO (TAGS) E TIPOGRAFIA GERAL
+   - Aplicam regras a todas as instâncias daquela tag específica (ex: body, h1, p, a).
+   -------------------------------------------------------------------------- */
+body {
+    /* Experimente: font-family, line-height, color, background-color */
+}
+
+h1, h2, h3 {
+    /* Experimente agrupar seletores separados por vírgula */
+}
+
+p {
+    /* Estilização de parágrafos */
+}
+
+a {
+    /* Estilização de links */
+}
+
+/* --------------------------------------------------------------------------
+   3. SELETORES DE CLASSE (.nome-da-classe)
+   - Reutilizáveis em múltiplos elementos no documento.
+   -------------------------------------------------------------------------- */
+.container {
+    /* Experimente: width: 90%; max-width: 1000px; margin: 0 auto; */
+}
+
+.card {
+    /* Experimente: background-color, border, border-radius, padding, margin-bottom */
+}
+
+.destaque {
+    /* Estilo para elementos em destaque */
+}
+
+.alerta {
+    /* Estilo de aviso */
+}
+
+/* --------------------------------------------------------------------------
+   4. SELETORES DE ID (#nome-do-id)
+   - Devem ser únicos por documento (alta especificidade).
+   -------------------------------------------------------------------------- */
+#cabecalho-principal {
+    /* Experimente: background-color, color, padding, text-align */
+}
+
+#logo {
+    /* Estilização do título principal */
+}
+
+#rodape-principal {
+    /* Estilização do rodapé */
+}
+
+/* --------------------------------------------------------------------------
+   5. COMBINADORES E RELAÇÕES
+   - Descendente (espaço): qualquer nível dentro do ancestral
+   - Filho direto (>): apenas o primeiro nível (filho imediato)
+   - Irmão adjacente (+): o primeiro irmão logo após
+   - Irmão geral (~): todos os irmãos seguintes
+   -------------------------------------------------------------------------- */
+
+/* Descendente: todos os <a> dentro de .menu-navegacao */
+.menu-navegacao a {
+    
+}
+
+/* Filho direto: apenas <p> diretamente filhos de .painel-exemplo */
+.painel-exemplo > p {
+    
+}
+
+/* Irmão adjacente: o <p> imediatamente após a classe .alerta */
+.alerta + p {
+    
+}
+
+/* --------------------------------------------------------------------------
+   6. SELETORES DE ATRIBUTOS
+   - [atributo], [atributo="valor"], [atributo^="valor"], [atributo*="valor"]
+   -------------------------------------------------------------------------- */
+
+/* Input de tipo texto */
+input[type="text"] {
+    
+}
+
+/* Input de tipo email */
+input[type="email"] {
+    
+}
+
+/* Links que abrem em nova aba */
+a[target="_blank"] {
+    
+}
+
+/* --------------------------------------------------------------------------
+   7. PSEUDOCLASSES (Estados e Posições)
+   - :hover, :focus, :active, :visited, :first-child, :last-child, :nth-child()
+   -------------------------------------------------------------------------- */
+
+/* Interações do usuário */
+.btn:hover {
+    
+}
+
+input:focus {
+    
+}
+
+button:disabled {
+    
+}
+
+/* Pseudoclasses estruturais */
+.lista-topicos li:first-child {
+    
+}
+
+.lista-topicos li:nth-child(even) {
+    /* Linhas pares */
+}
+
+.lista-topicos li:nth-child(odd) {
+    /* Linhas ímpares */
+}
+
+/* --------------------------------------------------------------------------
+   8. PSEUDOELEMENTOS (Partes específicas do elemento)
+   - ::first-letter, ::before, ::after, ::placeholder
+   -------------------------------------------------------------------------- */
+.introducao::first-letter {
+    /* Letra capitular */
+}
+
+.link-externo::after {
+    /* Adicionar um ícone ou texto como " ↗" */
+}
+
+/* --------------------------------------------------------------------------
+   9. ESPECIFICIDADE E CASCATA (Demonstração)
+   - Quem vence o conflito de cor?
+   - Tag (1) vs Classe (10) vs ID (100) vs Inline (1000)
+   -------------------------------------------------------------------------- */
+p.texto-verde {
+    color: green;
+}
+
+.texto-azul {
+    color: blue;
+}
+
+#texto-especifico {
+    /* color: red; */
+}
