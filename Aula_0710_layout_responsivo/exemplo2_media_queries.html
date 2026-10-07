@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tag obrigatória para funcionamento de media queries em dispositivos móveis (Slide 13) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 2: Media Queries e Mobile-First (Slides 8 e 12)</title>
+    <link rel="stylesheet" href="exemplo2_media_queries.css">
+</head>
+<body>
+
+    <!-- Barra utilitária superior -->
+    <div class="barra-navegacao-topo">
+        <a href="index.html">&larr; Voltar para o Hub Completo</a>
+        <span>Aula 5.3: Responsividade com @media</span>
+        <a href="exemplo1_caixas_flexbox.html">Ver Exemplo de Flexbox &rarr;</a>
+    </div>
+
+    <!-- Indicador dinâmico de Resolução / Breakpoint (via CSS puro) -->
+    <div class="indicador-resolucao">
+        <span class="alerta-dispositivo alerta-mobile">📱 Modo Atual: MOBILE (&lt; 768px)</span>
+        <span class="alerta-dispositivo alerta-tablet">💻 Modo Atual: TABLET (&ge; 768px e &lt; 1200px)</span>
+        <span class="alerta-dispositivo alerta-desktop">🖥️ Modo Atual: DESKTOP (&ge; 1200px)</span>
+    </div>
+
+    <main class="pagina">
+        <header class="cabecalho">
+            <h1>Código Progressivo com @media</h1>
+            <p>
+                Implementação literal do <strong>Slide 12 (Mobile-First: O Código Progressivo)</strong>.
+                Redimensione a janela para observar as quebras de layout.
+            </p>
+        </header>
+
+        <!-- CAIXA COM CÓDIGO DA AULA PARA CONSULTA DO ALUNO -->
+        <section class="bloco-codigo">
+            <h3>Código CSS do Slide 12:</h3>
+            <pre><code>/* 1. Base (Mobile por padrão) */
+.painel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. Tablets &amp; Viewports Médias */
+@media (min-width: 768px) {
+    .painel {
+        flex-direction: row;
+    }
+}
+
+/* 3. Desktops &amp; Viewports Grandes */
+@media (min-width: 1200px) {
+    .painel {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}</code></pre>
+        </section>
+
+        <!-- DEMONSTRAÇÃO PRÁTICA: O .PAINEL DO SLIDE 12 -->
+        <section class="secao-demonstracao">
+            <h2>Demonstração Prática do Contêiner <code>.painel</code></h2>
+
+            <div class="painel">
+                <div class="card caixa-roxa">
+                    <span class="icone-card">📱</span>
+                    <h3>Caixa 1: Base Mobile</h3>
+                    <p>No celular, ocupo 100% da largura em uma coluna vertical.</p>
+                    <span class="badge-status">Vertical em Mobile</span>
+                </div>
+
+                <div class="card caixa-verde">
+                    <span class="icone-card">💻</span>
+                    <h3>Caixa 2: Breakpoint Tablet</h3>
+                    <p>A partir de <code>768px</code>, viramos linha horizontal com <code>flex-direction: row</code>.</p>
+                    <span class="badge-status">@media (min-width: 768px)</span>
+                </div>
+
+                <div class="card caixa-ambar">
+                    <span class="icone-card">🖥️</span>
+                    <h3>Caixa 3: Breakpoint Desktop</h3>
+                    <p>A partir de <code>1200px</code>, limitamos a largura a <code>1140px</code> com margens automáticas.</p>
+                    <span class="badge-status">@media (min-width: 1200px)</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

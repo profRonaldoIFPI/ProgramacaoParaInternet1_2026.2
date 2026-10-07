@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- 
+        ===================================================================
+        AULA 5.3: CSS LAYOUTS E RESPONSIVIDADE
+        Disciplina: Programação para Internet I - IFPI Campus Floriano
+        Prof. Ronaldo Borges
+        ===================================================================
+    -->
+    <meta charset="UTF-8">
+    <!-- Tag fundamental para responsividade (Slide 13) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 5.3: CSS Layouts e Responsividade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================================= -->
+    <!-- BARRA DE STATUS DO BREAKPOINT ATUAL (Dinâmica via CSS)       -->
+    <!-- ============================================================= -->
+    <div class="status-viewport" id="statusViewport">
+        <span class="status-badge status-mobile">📱 Viewport: Mobile (&lt; 768px)</span>
+        <span class="status-badge status-tablet">💻 Viewport: Tablet (768px - 1199px)</span>
+        <span class="status-badge status-desktop">🖥️ Viewport: Desktop (≥ 1200px)</span>
+        <small class="dica-redimensionar">Redimensione a janela do navegador para ver a adaptação!</small>
+    </div>
+
+    <!-- ============================================================= -->
+    <!-- CABEÇALHO DO SITE (Slide 6 - Flexbox na Prática)             -->
+    <!-- ============================================================= -->
+    <header class="navbar">
+        <div class="logo">
+            <span class="logo-icone">⚡</span> WebDev IFPI
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#flexbox-caixas" class="link-nav">Flexbox</a></li>
+                <li><a href="#alinhamentos" class="link-nav">Alinhamentos</a></li>
+                <li><a href="#responsividade-media" class="link-nav">@media Queries</a></li>
+                <li><a href="#macro-layout" class="link-nav">Macro-Layout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ============================================================= -->
+    <!-- CONTEÚDO PRINCIPAL                                            -->
+    <!-- ============================================================= -->
+    <main class="container-principal">
+
+        <!-- INTRODUÇÃO: DA RIGIDEZ À FLUIDEZ (Slide 2 e 7) -->
+        <section class="secao-intro">
+            <h1 class="titulo-aula">CSS Layouts e Responsividade</h1>
+            <p class="subtitulo-aula">
+                Transição da rigidez das medidas fixas (pixels) para a fluidez das proporções e media queries.
+            </p>
+
+            <blockquote class="citacao-marcotte">
+                “O design responsivo não é criar múltiplas versões de um site, mas construir um único sistema que ajusta seu design às características do navegador e do contexto.”
+                <cite>— Ethan Marcotte (Criador do Conceito de Responsive Web Design)</cite>
+            </blockquote>
+
+            <div class="cards-pilares">
+                <div class="card-pilar pilar-roxo">
+                    <h3>1. Layout Fluido</h3>
+                    <p>Porcentagens (<code>%</code>), Box-Sizing e Flexbox em vez de larguras fixas (960px).</p>
+                </div>
+                <div class="card-pilar pilar-verde">
+                    <h3>2. Imagens Flexíveis</h3>
+                    <p>Uso de <code>max-width: 100%</code> para que mídias respeitem seus contêineres.</p>
+                </div>
+                <div class="card-pilar pilar-ambar">
+                    <h3>3. Media Queries</h3>
+                    <p>O motor declarativo condicional (<code>@media</code>) adaptando estilos ao contexto.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- EXEMPLO 1: FLEXBOX COM AS CAIXAS COLORIDAS (Slides 4 e 5)     -->
+        <!-- ============================================================= -->
+        <section id="flexbox-caixas" class="bloco-estudo">
+            <div class="cabecalho-bloco">
+                <span class="tag-slide">Slide 4 &amp; 5</span>
+                <h2>Exemplo 1: O Modelo Flexbox e as Caixas Coloridas</h2>
+                <p>
+                    O Flexbox organiza elementos em <strong>uma dimensão por vez</strong> (linha ou coluna).
+                    Abaixo temos os dois eixos fundamentais: <strong>Main Axis</strong> (Eixo Principal) e <strong>Cross Axis</strong> (Eixo Secundário).
+                </p>
+            </div>
+
+            <!-- EIXOS DO FLEXBOX (Slide 4) -->
+            <div class="painel-demonstracao">
+                <h3>Anatomia dos Eixos (Flex Row)</h3>
+                <div class="eixo-indicador-container">
+                    <div class="seta-eixo main-axis">
+                        <span>Main Axis (Eixo Principal &rarr;)</span>
+                    </div>
+                    <div class="container-flexbox demonstrador-eixos">
+                        <div class="caixa caixa-roxa">Caixa 1<br><small>Roxo (#8E7BB0)</small></div>
+                        <div class="caixa caixa-verde">Caixa 2<br><small>Verde (#74B49B)</small></div>
+                        <div class="caixa caixa-ambar">Caixa 3<br><small>Âmbar (#DDA15E)</small></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DICIONÁRIO FLEXBOX: JUSTIFY-CONTENT E ALIGN-ITEMS (Slide 5) -->
+            <div id="alinhamentos" class="subsecao-alinhamentos">
+                <h3>Distribuição de Espaços (Dicionário Flexbox)</h3>
+
+                <!-- JUSTIFY-CONTENT -->
+                <div class="grupo-alinhamento">
+                    <h4>justify-content (Alinhamento no Eixo Principal)</h4>
+                    
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">justify-content: flex-start;</span>
+                        <div class="container-flexbox jc-flex-start">
+                            <div class="caixa caixa-roxa">1</div>
+                            <div class="caixa caixa-verde">2</div>
+                            <div class="caixa caixa-ambar">3</div>
+                        </div>
+                    </div>
+
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">justify-content: center;</span>
+                        <div class="container-flexbox jc-center">
+                            <div class="caixa caixa-roxa">1</div>
+                            <div class="caixa caixa-verde">2</div>
+                            <div class="caixa caixa-ambar">3</div>
+                        </div>
+                    </div>
+
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">justify-content: space-between;</span>
+                        <div class="container-flexbox jc-space-between">
+                            <div class="caixa caixa-roxa">1</div>
+                            <div class="caixa caixa-verde">2</div>
+                            <div class="caixa caixa-ambar">3</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ALIGN-ITEMS -->
+                <div class="grupo-alinhamento">
+                    <h4>align-items (Alinhamento no Eixo Secundário)</h4>
+
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">align-items: flex-start;</span>
+                        <div class="container-flexbox container-alto ai-flex-start">
+                            <div class="caixa caixa-roxa">1</div>
+                            <div class="caixa caixa-verde">2</div>
+                            <div class="caixa caixa-ambar">3</div>
+                        </div>
+                    </div>
+
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">align-items: center;</span>
+                        <div class="container-flexbox container-alto ai-center">
+                            <div class="caixa caixa-roxa">1</div>
+                            <div class="caixa caixa-verde">2</div>
+                            <div class="caixa caixa-ambar">3</div>
+                        </div>
+                    </div>
+
+                    <div class="caso-alinhamento">
+                        <span class="rotulo-prop">align-items: stretch;</span>
+                        <div class="container-flexbox container-alto ai-stretch">
+                            <div class="caixa caixa-roxa caixa-stretch">1 (stretch)</div>
+                            <div class="caixa caixa-verde caixa-stretch">2 (stretch)</div>
+                            <div class="caixa caixa-ambar caixa-stretch">3 (stretch)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- EXEMPLO 2: RESPONSIVIDADE E @MEDIA QUERIES (Slides 8, 10, 12) -->
+        <!-- ============================================================= -->
+        <section id="responsividade-media" class="bloco-estudo">
+            <div class="cabecalho-bloco">
+                <span class="tag-slide">Slide 8 &amp; 12</span>
+                <h2>Exemplo 2: Media Queries e Paradigma Mobile-First</h2>
+                <p>
+                    Construção com <strong>Progressive Enhancement</strong> (Evolução Progressiva).
+                    Começamos com CSS simples e vertical para mobile, e usamos <code>@media (min-width: ...)</code> para expandir em telas maiores.
+                </p>
+            </div>
+
+            <!-- ANATOMIA DA REGRA (Slide 8) -->
+            <div class="anatomia-regra">
+                <h3>Anatomia da Regra @media</h3>
+                <div class="codigo-destaque">
+                    <code>@media only screen and (min-width: 768px)</code>
+                </div>
+                <div class="blocos-anatomia">
+                    <div class="card-anatomia anatomia-roxa">
+                        <strong>@media</strong>
+                        <span>Declaração condicional</span>
+                    </div>
+                    <div class="card-anatomia anatomia-verde">
+                        <strong>only screen</strong>
+                        <span>Media Type (tela)</span>
+                    </div>
+                    <div class="card-anatomia anatomia-ambar">
+                        <strong>and</strong>
+                        <span>Operador Lógico</span>
+                    </div>
+                    <div class="card-anatomia anatomia-menta">
+                        <strong>(min-width: 768px)</strong>
+                        <span>Breakpoint (gatilho)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DEMONSTRAÇÃO DO PAINEL PROGRESSIVO DO SLIDE 12 -->
+            <div class="painel-demonstracao-media">
+                <h3>O Painel Progressivo (Slide 12 na Prática)</h3>
+                <p class="instrucao-teste">
+                    Este painel abaixo adapta dinamicamente com base nas regras:
+                    <br>
+                    <strong>1. Mobile Base:</strong> Coluna vertical (<code>flex-direction: column</code>)
+                    <br>
+                    <strong>2. Tablet (&ge; 768px):</strong> Linha horizontal (<code>flex-direction: row</code>)
+                    <br>
+                    <strong>3. Desktop (&ge; 1200px):</strong> Largura máxima restrita (<code>max-width: 1140px</code>) centralizada
+                </p>
+
+                <!-- ESTE É O CONTAINER QUE SOFRE A TRANSFORMAÇÃO PELO @MEDIA -->
+                <div class="painel-responsivo">
+                    <article class="card-responsivo card-mobile">
+                        <div class="cabecalho-card">
+                            <span class="numero-passo">1</span>
+                            <h4>Mobile Base (&lt; 768px)</h4>
+                        </div>
+                        <p>
+                            Largura <code>100%</code>, empilhamento em coluna. Carrega apenas regras leves e essenciais.
+                        </p>
+                        <div class="tag-regra">width: 100%; flex-direction: column;</div>
+                    </article>
+
+                    <article class="card-responsivo card-tablet">
+                        <div class="cabecalho-card">
+                            <span class="numero-passo">2</span>
+                            <h4>Tablet (&ge; 768px)</h4>
+                        </div>
+                        <p>
+                            Ativado via <code>@media (min-width: 768px)</code>. O contêiner agora distribui seus cartões lado a lado.
+                        </p>
+                        <div class="tag-regra">@media (min-width: 768px) { flex-direction: row; }</div>
+                    </article>
+
+                    <article class="card-responsivo card-desktop">
+                        <div class="cabecalho-card">
+                            <span class="numero-passo">3</span>
+                            <h4>Desktop (&ge; 1200px)</h4>
+                        </div>
+                        <p>
+                            Ativado via <code>@media (min-width: 1200px)</code>. Evita linhas longas demais limitando a largura.
+                        </p>
+                        <div class="tag-regra">@media (min-width: 1200px) { max-width: 1140px; margin: 0 auto; }</div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- EXEMPLO 3: MACRO-ESTRUTURA EM GRADE (Slides 1, 3 e 14)        -->
+        <!-- ============================================================= -->
+        <section id="macro-layout" class="bloco-estudo">
+            <div class="cabecalho-bloco">
+                <span class="tag-slide">Slides 1, 3 &amp; 14</span>
+                <h2>Exemplo 3: Macro-Layout com as Cores dos Slides</h2>
+                <p>
+                    Reprodução da estrutura completa da capa e dos slides: Cabeçalho roxo, navegação lateral verde-menta,
+                    área de destaque (Feature Area) e 3 colunas de conteúdo responsivas.
+                </p>
+            </div>
+
+            <div class="layout-macro-simulador">
+                <header class="macro-topo">
+                    <div class="macro-logo">Logo</div>
+                    <div class="macro-nav">Top Navigation</div>
+                </header>
+
+                <div class="macro-corpo">
+                    <aside class="macro-sidebar">
+                        <h4>Sidebar</h4>
+                        <ul>
+                            <li>Dashboard</li>
+                            <li>Aulas</li>
+                            <li>CSS Grid</li>
+                            <li>Flexbox</li>
+                        </ul>
+                    </aside>
+
+                    <section class="macro-conteudo">
+                        <div class="macro-feature">
+                            <h3>Feature Area</h3>
+                            <p>Área de destaque do layout (Banner central com fundo lavanda suave).</p>
+                        </div>
+
+                        <div class="macro-colunas">
+                            <div class="macro-coluna col-1">
+                                <h4>Content Column 1</h4>
+                                <p>Coluna flexível que se ajusta proporcionalmente.</p>
+                            </div>
+                            <div class="macro-coluna col-2">
+                                <h4>Content Column 2</h4>
+                                <p>Coluna flexível com cor de destaque âmbar.</p>
+                            </div>
+                            <div class="macro-coluna col-3">
+                                <h4>Content Column 3</h4>
+                                <p>Coluna flexível verde-menta com bordas arredondadas.</p>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ============================================================= -->
+    <!-- RODAPÉ                                                        -->
+    <!-- ============================================================= -->
+    <footer class="rodape-pagina">
+        <p>
+            IFPI Campus Floriano &bull; Programação para Internet I &bull; Prof. Ronaldo Borges &bull; Aula 5.3: CSS Layouts e Responsividade
+        </p>
+        <p class="links-arquivos-extras">
+            Arquivos de laboratório separados: 
+            <a href="exemplo1_caixas_flexbox.html">Exemplo 1 (Isolado: Flexbox)</a> &bull;
+            <a href="exemplo2_media_queries.html">Exemplo 2 (Isolado: @media)</a>
+        </p>
+    </footer>
+
+</body>
+</html>

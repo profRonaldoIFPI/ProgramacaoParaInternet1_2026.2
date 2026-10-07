@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo 1: Flexbox e Caixas Coloridas (Slides 4 e 5)</title>
+    <link rel="stylesheet" href="exemplo1_caixas_flexbox.css">
+</head>
+<body>
+
+    <!-- Link de navegação de volta para o hub principal -->
+    <div class="barra-navegacao-topo">
+        <a href="index.html">&larr; Voltar para o Hub Completo da Aula</a>
+        <span>Aula 5.3: Flexbox na Prática (Prof. Ronaldo Borges)</span>
+        <a href="exemplo2_media_queries.html">Ver Exemplo de @media &rarr;</a>
+    </div>
+
+    <!-- 1. NAVBAR COM FLEXBOX (Slide 6) -->
+    <header class="navbar">
+        <div class="logo">⚡ Logo</div>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </header>
+
+    <main class="container">
+        <h1>O Modelo Flexbox: Caixas Coloridas</h1>
+        <p class="descricao">
+            Demonstração prática dos <strong>Slides 4 e 5</strong> da aula. Três caixas flexíveis (Roxa, Verde e Âmbar)
+            sendo alinhadas ao longo do <em>Eixo Principal (Main Axis)</em> e do <em>Eixo Secundário (Cross Axis)</em>.
+        </p>
+
+        <!-- SEÇÃO: JUSTIFY-CONTENT (EIXO PRINCIPAL) -->
+        <section class="card-exemplo">
+            <h2>1. justify-content (Eixo Principal / Linha)</h2>
+            
+            <div class="caso">
+                <h3>justify-content: flex-start;</h3>
+                <div class="box-container jc-start">
+                    <div class="caixa caixa-roxa">1</div>
+                    <div class="caixa caixa-verde">2</div>
+                    <div class="caixa caixa-ambar">3</div>
+                </div>
+            </div>
+
+            <div class="caso">
+                <h3>justify-content: center;</h3>
+                <div class="box-container jc-center">
+                    <div class="caixa caixa-roxa">1</div>
+                    <div class="caixa caixa-verde">2</div>
+                    <div class="caixa caixa-ambar">3</div>
+                </div>
+            </div>
+
+            <div class="caso">
+                <h3>justify-content: space-between;</h3>
+                <div class="box-container jc-space-between">
+                    <div class="caixa caixa-roxa">1</div>
+                    <div class="caixa caixa-verde">2</div>
+                    <div class="caixa caixa-ambar">3</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO: ALIGN-ITEMS (EIXO SECUNDÁRIO) -->
+        <section class="card-exemplo">
+            <h2>2. align-items (Eixo Secundário / Altura)</h2>
+
+            <div class="caso">
+                <h3>align-items: flex-start;</h3>
+                <div class="box-container container-alto ai-start">
+                    <div class="caixa caixa-roxa">1</div>
+                    <div class="caixa caixa-verde">2</div>
+                    <div class="caixa caixa-ambar">3</div>
+                </div>
+            </div>
+
+            <div class="caso">
+                <h3>align-items: center;</h3>
+                <div class="box-container container-alto ai-center">
+                    <div class="caixa caixa-roxa">1</div>
+                    <div class="caixa caixa-verde">2</div>
+                    <div class="caixa caixa-ambar">3</div>
+                </div>
+            </div>
+
+            <div class="caso">
+                <h3>align-items: stretch;</h3>
+                <div class="box-container container-alto ai-stretch">
+                    <div class="caixa caixa-roxa stretch">1</div>
+                    <div class="caixa caixa-verde stretch">2</div>
+                    <div class="caixa caixa-ambar stretch">3</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>

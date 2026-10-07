@@ -1,0 +1,212 @@
+/* ==========================================================================
+   EXEMPLO 2: MEDIA QUERIES E CÓDIGO PROGRESSIVO (Slides 8, 10, 11 e 12)
+   Programação para Internet I - IFPI Floriano
+   Prof. Ronaldo Borges
+   ========================================================================== */
+
+:root {
+    --roxa: #8E7BB0;
+    --verde: #74B49B;
+    --ambar: #DDA15E;
+    --cinza-fundo: #F4F6F9;
+    --cinza-box: #E5E8EC;
+    --texto: #2D3748;
+}
+
+/* Reset universal e Box-sizing (Slide 2) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--cinza-fundo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* Barra utilitária */
+.barra-navegacao-topo {
+    background-color: #212529;
+    color: #FFFFFF;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.85rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.barra-navegacao-topo a {
+    color: var(--ambar);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Indicador dinâmico de resolução */
+.indicador-resolucao {
+    background-color: #343A40;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.alerta-dispositivo {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .alerta-mobile {
+        display: inline-block;
+        color: #D6BCFA;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .alerta-tablet {
+        display: inline-block;
+        color: #9AE6B4;
+    }
+}
+
+@media (min-width: 1200px) {
+    .alerta-desktop {
+        display: inline-block;
+        color: #FBD38D;
+    }
+}
+
+/* Layout geral */
+.pagina {
+    padding: 2rem 1rem;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cabecalho h1 {
+    font-size: 2rem;
+    color: #1A202C;
+}
+
+.bloco-codigo {
+    background-color: #1E1E1E;
+    color: #D4D4D4;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.bloco-codigo h3 {
+    color: #4EC9B0;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.bloco-codigo pre {
+    overflow-x: auto;
+    font-family: Consolas, "Courier New", Courier, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.secao-demonstracao h2 {
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* ==========================================================================
+   CÓDIGO PROGRESSIVO DO SLIDE 12: MOBILE-FIRST
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. BASE (Mobile por padrão)
+   - width: 100%
+   - display: flex com flex-direction: column
+   -------------------------------------------------------------------------- */
+.painel {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: var(--cinza-box);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px dashed #CBD5E0;
+    transition: all 0.3s ease;
+}
+
+.card {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    color: #FFFFFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.icone-card {
+    font-size: 2rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+}
+
+.badge-status {
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 0.3rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    align-self: flex-start;
+    font-family: monospace;
+}
+
+/* Cores dos cards correspondendo às caixas dos slides */
+.caixa-roxa {
+    background-color: var(--roxa);
+}
+
+.caixa-verde {
+    background-color: var(--verde);
+}
+
+.caixa-ambar {
+    background-color: var(--ambar);
+}
+
+/* --------------------------------------------------------------------------
+   2. TABLETS & VIEWPORTS MÉDIAS (Slide 12)
+   - min-width: 768px ativa o alinhamento em linha (flex-direction: row)
+   -------------------------------------------------------------------------- */
+@media (min-width: 768px) {
+    .painel {
+        flex-direction: row;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   3. DESKTOPS & VIEWPORTS GRANDES (Slide 12)
+   - min-width: 1200px limita a largura máxima a 1140px e centraliza
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+    .painel {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+}
