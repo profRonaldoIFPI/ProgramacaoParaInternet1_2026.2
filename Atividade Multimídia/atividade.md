@@ -1,3 +1,5 @@
+![Cabeçalho da atividade](../../../../Imagens/Capturas%20de%20tela/cabeçalho_atividade.png)
+
 # 📝 Laboratório Prático: Portal Turístico Floriano Cultural
 
 **Disciplina:** Programação para Internet I (TEC.1045)  

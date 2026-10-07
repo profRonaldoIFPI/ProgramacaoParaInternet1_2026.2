@@ -1,4 +1,22 @@
-/* ==========================================================================
+:root{
+    --logo: #3bbcf8;
+    --font_body: #364356;
+    --font_subtitle: #9399b2;   
+    --fundo_escuro: #161d2e;
+    --fundo_claro: #f8fafc;
+    --primary_blue: #2a63ea;
+    --borda_inferior: #3d81f6;
+    --fundo_card_destaque: #e5f1ff;
+    --primary_green: #1ca24b;
+    --unable_gray: #dae1e9;
+    --fundo_card_secundario:#f0f5f9;
+    --inicio_gradiente: #eef6ff;
+    --final_gradiente: #dae9fe;
+    --fundo_codigo: #e1e7ef;
+    --codigo: #b82222;
+}
+
+/* ;
    AULA 5.1: INTRODUÇÃO AO CSS E SELETORES
    Disciplina: Programação para Internet I - IFPI Campus Floriano
    Prof. Ronaldo Borges
@@ -16,7 +34,7 @@
     padding: 0;
 }
  html{
-    font-size: 10px;
+    font-size: 10pt;
  }
 
 /* --------------------------------------------------------------------------
@@ -26,8 +44,8 @@
 body {
     /* Experimente: font-family, line-height, color, background-color */
     font-family: Arial;
-    color: #4a4a4a;
-    background-color: rgba(224, 224, 224, 0.5);
+    color: var(--font_body);
+    background-color: var(--fundo_claro);
 }
 header{
     font-size: 12px;
@@ -58,7 +76,13 @@ a {
     margin: 5px;
     /* border: 1px solid red; */
 }
-
+.subtitulo {
+    font-size: 1.2rem;
+    color: var(--font_subtitle); 
+    /* margin: 1rem 0; */
+    line-height: 2rem;
+    /* border: red solid 1px; */
+}
 .card {
     /* Experimente: background-color, border, border-radius, padding, margin-bottom */
     border: 1px solid blue;
@@ -69,9 +93,26 @@ a {
 
 .destaque {
     /* Estilo para elementos em destaque */
-    border: 1px solid green;
+    border: 1px solid rgba(25, 155, 248, 0.568);
+    border-left: 5px solid var(--primary_blue);
+    border-radius: 8px;
+    background: linear-gradient(120deg, var(--inicio_gradiente), var(--final_gradiente)) ;
+    /* background: linear-gradient(120deg, red, blue) ; */
+    margin: 2rem;
+    padding: 2rem;
 }
+h2{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #b3b3b32d;
+    padding-bottom: 0.4rem;
+}
+.destaque p{
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
 
+}
 .alerta {
     /* Estilo de aviso */
 }
@@ -82,23 +123,23 @@ a {
    -------------------------------------------------------------------------- */
 #cabecalho-principal {
     /* Experimente: background-color, color, padding, text-align */
-    background-color: rgb(42, 42, 56);
-    border-bottom: 5px solid blue;
+    background-color: var(--fundo_escuro);
+    border-bottom: 5px solid var(--primary_blue);
     color: aliceblue;
     text-align: center;
     padding: 1.2rem;
 }
 
 #logo {
-    color: #16a8d9;
-    font-size: 2.2rem;
+    color: var(--logo); 
+    font-size: 2.7rem;
     margin-bottom: 1rem; 
     /* line-height: 3rem; */
 }
 
 #rodape-principal {
     /* Estilização do rodapé */
-    background-color: darkslateblue;
+    background-color: var(--fundo_escuro);
     color: lightgray;
     font-size: 8pt;
     text-align: center;
@@ -120,15 +161,16 @@ a {
     display: flex;
     justify-content: center; /*horizontal*/
     list-style: none;
-    gap: 1.2rem;
+    gap: 1.6rem;
     margin: 1rem;
+    font-size: 1.2rem ;
 }
 
 .menu-navegacao a {
     /* background-color: rgb(10, 113, 224); */
     color: aliceblue;
-    padding: 0.4rem;
-    border-radius: 3px;
+    padding: 0.4rem 0.8rem ;
+    border-radius: 5px;
     font-weight: 700;
 }
 .menu-navegacao a:hover{
@@ -142,6 +184,36 @@ a {
     color:  rgb(25, 155, 248);
     text-decoration: underline;
 }
+
+.btn{
+    border: 1px solid white;
+    border-radius: 8px;
+    padding: 0.8rem 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* line-height: 2rem;    */
+}
+.btn-primario{
+    background-color: var(--primary_blue);
+    color: white;
+}
+.btn-sucesso{
+    background-color: var(--primary_green);
+    color: white;
+}
+.btn-desabilitado{
+    background-color: var(--unable_gray);
+    /* color: white; */
+}
+
+code{
+    color: var(--codigo);
+    background-color: var(--fundo_codigo);
+    padding: 0.2rem;
+    font-family: Courier, monospace;
+    font-weight: bold;
+}
+
 
 /* Filho direto: apenas <p> diretamente filhos de .painel-exemplo */
 .painel-exemplo>p {}
@@ -191,6 +263,9 @@ button:disabled {}
    - ::first-letter, ::before, ::after, ::placeholder
    -------------------------------------------------------------------------- */
 .introducao::first-letter {
+    font-size: 2rem;
+    color: var(--primary_blue);
+    font-weight: bolder;
     /* Letra capitular */
 }
 
