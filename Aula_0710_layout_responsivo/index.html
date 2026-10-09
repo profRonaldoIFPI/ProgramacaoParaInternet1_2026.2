@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <!-- 
         ===================================================================
@@ -14,6 +15,7 @@
     <title>Aula 5.3: CSS Layouts e Responsividade</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- ============================================================= -->
@@ -56,11 +58,12 @@
             </p>
 
             <blockquote class="citacao-marcotte">
-                “O design responsivo não é criar múltiplas versões de um site, mas construir um único sistema que ajusta seu design às características do navegador e do contexto.”
+                “O design responsivo não é criar múltiplas versões de um site, mas construir um único sistema que ajusta
+                seu design às características do navegador e do contexto.”
                 <cite>— Ethan Marcotte (Criador do Conceito de Responsive Web Design)</cite>
             </blockquote>
 
-            <div class="cards-pilares">
+            <div class="c">
                 <div class="card-pilar pilar-roxo">
                     <h3>1. Layout Fluido</h3>
                     <p>Porcentagens (<code>%</code>), Box-Sizing e Flexbox em vez de larguras fixas (960px).</p>
@@ -85,7 +88,8 @@
                 <h2>Exemplo 1: O Modelo Flexbox e as Caixas Coloridas</h2>
                 <p>
                     O Flexbox organiza elementos em <strong>uma dimensão por vez</strong> (linha ou coluna).
-                    Abaixo temos os dois eixos fundamentais: <strong>Main Axis</strong> (Eixo Principal) e <strong>Cross Axis</strong> (Eixo Secundário).
+                    Abaixo temos os dois eixos fundamentais: <strong>Main Axis</strong> (Eixo Principal) e <strong>Cross
+                        Axis</strong> (Eixo Secundário).
                 </p>
             </div>
 
@@ -111,7 +115,7 @@
                 <!-- JUSTIFY-CONTENT -->
                 <div class="grupo-alinhamento">
                     <h4>justify-content (Alinhamento no Eixo Principal)</h4>
-                    
+
                     <div class="caso-alinhamento">
                         <span class="rotulo-prop">justify-content: flex-start;</span>
                         <div class="container-flexbox jc-flex-start">
@@ -183,7 +187,8 @@
                 <h2>Exemplo 2: Media Queries e Paradigma Mobile-First</h2>
                 <p>
                     Construção com <strong>Progressive Enhancement</strong> (Evolução Progressiva).
-                    Começamos com CSS simples e vertical para mobile, e usamos <code>@media (min-width: ...)</code> para expandir em telas maiores.
+                    Começamos com CSS simples e vertical para mobile, e usamos <code>@media (min-width: ...)</code> para
+                    expandir em telas maiores.
                 </p>
             </div>
 
@@ -223,7 +228,8 @@
                     <br>
                     <strong>2. Tablet (&ge; 768px):</strong> Linha horizontal (<code>flex-direction: row</code>)
                     <br>
-                    <strong>3. Desktop (&ge; 1200px):</strong> Largura máxima restrita (<code>max-width: 1140px</code>) centralizada
+                    <strong>3. Desktop (&ge; 1200px):</strong> Largura máxima restrita (<code>max-width: 1140px</code>)
+                    centralizada
                 </p>
 
                 <!-- ESTE É O CONTAINER QUE SOFRE A TRANSFORMAÇÃO PELO @MEDIA -->
@@ -245,7 +251,8 @@
                             <h4>Tablet (&ge; 768px)</h4>
                         </div>
                         <p>
-                            Ativado via <code>@media (min-width: 768px)</code>. O contêiner agora distribui seus cartões lado a lado.
+                            Ativado via <code>@media (min-width: 768px)</code>. O contêiner agora distribui seus cartões
+                            lado a lado.
                         </p>
                         <div class="tag-regra">@media (min-width: 768px) { flex-direction: row; }</div>
                     </article>
@@ -256,7 +263,8 @@
                             <h4>Desktop (&ge; 1200px)</h4>
                         </div>
                         <p>
-                            Ativado via <code>@media (min-width: 1200px)</code>. Evita linhas longas demais limitando a largura.
+                            Ativado via <code>@media (min-width: 1200px)</code>. Evita linhas longas demais limitando a
+                            largura.
                         </p>
                         <div class="tag-regra">@media (min-width: 1200px) { max-width: 1140px; margin: 0 auto; }</div>
                     </article>
@@ -272,7 +280,8 @@
                 <span class="tag-slide">Slides 1, 3 &amp; 14</span>
                 <h2>Exemplo 3: Macro-Layout com as Cores dos Slides</h2>
                 <p>
-                    Reprodução da estrutura completa da capa e dos slides: Cabeçalho roxo, navegação lateral verde-menta,
+                    Reprodução da estrutura completa da capa e dos slides: Cabeçalho roxo, navegação lateral
+                    verde-menta,
                     área de destaque (Feature Area) e 3 colunas de conteúdo responsivas.
                 </p>
             </div>
@@ -326,14 +335,16 @@
     <!-- ============================================================= -->
     <footer class="rodape-pagina">
         <p>
-            IFPI Campus Floriano &bull; Programação para Internet I &bull; Prof. Ronaldo Borges &bull; Aula 5.3: CSS Layouts e Responsividade
+            IFPI Campus Floriano &bull; Programação para Internet I &bull; Prof. Ronaldo Borges &bull; Aula 5.3: CSS
+            Layouts e Responsividade
         </p>
         <p class="links-arquivos-extras">
-            Arquivos de laboratório separados: 
+            Arquivos de laboratório separados:
             <a href="exemplo1_caixas_flexbox.html">Exemplo 1 (Isolado: Flexbox)</a> &bull;
             <a href="exemplo2_media_queries.html">Exemplo 2 (Isolado: @media)</a>
         </p>
     </footer>
 
 </body>
+
 </html>
