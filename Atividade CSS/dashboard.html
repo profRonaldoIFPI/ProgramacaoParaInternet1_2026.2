@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atividade de CSS - Painel de Controle / Dashboard Voya Travel">
+  <title>VOYA Travel | Painel de Viagens</title>
+  
+  <!-- Fontes Google & Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Folha de Estilos da Atividade -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-layout">
+
+  <!-- ======================================================================
+       BARRA LATERAL DE NAVEGAÇÃO (SIDEBAR)
+       ====================================================================== -->
+  <aside class="sidebar" aria-label="Navegação Lateral">
+    <div>
+      <!-- Cabeçalho da Barra Lateral -->
+      <header class="sidebar-header">
+        <img src="img/logo.png" alt="Logotipo Voya Travel" class="sidebar-logo">
+        <span class="sidebar-brand-title">Voya</span>
+      </header>
+
+      <!-- Menu Principal de Navegação -->
+      <nav class="sidebar-nav-container" aria-label="Menu Principal">
+        <ul class="sidebar-nav">
+          <li>
+            <a href="#" class="nav-link active" aria-current="page">
+              <span class="material-symbols-outlined" aria-hidden="true">grid_view</span>
+              <span>Visão Geral</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">hotel</span>
+              <span>Hospedagens</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">flight</span>
+              <span>Voos &amp; Passagens</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">directions_car</span>
+              <span>Transporte &amp; Aluguel</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">explore</span>
+              <span>Guias Turísticos</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">inventory_2</span>
+              <span>Pacotes</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="nav-link">
+              <span class="material-symbols-outlined" aria-hidden="true">settings</span>
+              <span>Configurações</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Rodapé da Barra Lateral com Perfil e Logout -->
+    <footer class="sidebar-footer">
+      <div class="user-badge">
+        <div class="user-info">
+          <img src="img/avatar.jpg" alt="Foto de perfil do Concierge VIP" class="user-avatar">
+          <div>
+            <strong class="user-name">Concierge VIP</strong>
+            <span class="user-status">online</span>
+          </div>
+        </div>
+        <a href="login.html" class="btn-icon-logout" title="Sair da Conta" aria-label="Sair da conta">
+          <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+        </a>
+      </div>
+    </footer>
+  </aside>
+
+  <!-- ======================================================================
+       ÁREA PRINCIPAL (TOPBAR + CONTEÚDO)
+       ====================================================================== -->
+  <div class="main-wrapper">
+    
+    <!-- Barra Superior (Topbar) -->
+    <header class="topbar">
+      <nav class="topbar-actions" aria-label="Ações e Notificações">
+        <!-- Notificações -->
+        <button type="button" class="icon-btn" title="Notificações" aria-label="Ver notificações">
+          <span class="material-symbols-outlined" aria-hidden="true">notifications</span>
+          <span class="notification-dot" aria-hidden="true"></span>
+        </button>
+
+        <!-- Pesquisa -->
+        <button type="button" class="icon-btn" title="Pesquisar" aria-label="Buscar no sistema">
+          <span class="material-symbols-outlined" aria-hidden="true">search</span>
+        </button>
+
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal do Dashboard -->
+    <main class="content-area">
+      
+      <!-- Cabeçalho de Boas-Vindas -->
+      <header class="content-header">
+        <h1 class="content-title">Olá, Rodrigo!</h1>
+        <p class="content-subtitle">Suas próximas viagens e reservas confirmadas na Itália.</p>
+      </header>
+
+      <!-- Grade Semântica com os Cards de Viagem -->
+      <section class="cards-grid" aria-label="Próximas Viagens">
+        
+        <!-- CARD 1: Hospedagem -->
+        <article class="travel-card" aria-labelledby="card-hospedagem-title">
+          <div class="card-content-top">
+            <header class="card-header">
+              <span class="badge badge-success">Confirmado</span>
+              <span class="card-category">Hospedagem</span>
+            </header>
+
+            <div class="card-headline">
+              <h2 id="card-hospedagem-title" class="card-title">Hotel Villa Cimbrone</h2>
+              <p class="card-subtitle">Ravello, Costa Amalfitana</p>
+            </div>
+
+            <section class="card-details-box" aria-label="Detalhes da estadia">
+              <span class="detail-label">Check-in</span>
+              <strong class="detail-value">12 a 16 de Outubro (4 noites)</strong>
+            </section>
+
+            <div class="card-footer-info">
+              <span class="card-footer-label">Valor total:</span>
+              <strong class="card-footer-value">€ 2.450</strong>
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <button type="button" class="btn btn-secondary btn-full">
+              <span class="material-symbols-outlined" aria-hidden="true">info</span>
+              <span>Ver Detalhes</span>
+            </button>
+          </footer>
+        </article>
+
+        <!-- CARD 2: Transporte / Voo -->
+        <article class="travel-card" aria-labelledby="card-voo-title">
+          <div class="card-content-top">
+            <header class="card-header">
+              <span class="badge badge-info">No Horário</span>
+              <span class="card-category">Transporte</span>
+            </header>
+
+            <div class="card-headline">
+              <h2 id="card-voo-title" class="card-title">Voo São Paulo → Roma</h2>
+              <p class="card-subtitle">GRU - FCO • LATAM / ITA Airways</p>
+            </div>
+
+            <section class="card-details-box" aria-label="Detalhes do voo">
+              <span class="detail-label">Horário &amp; Assento</span>
+              <strong class="detail-value">12 Out • Partida 23:40 (Assento 12A)</strong>
+            </section>
+
+            <div class="card-footer-info">
+              <span class="card-footer-label">Terminal / Portão:</span>
+              <strong class="card-footer-value">T3 • G-24</strong>
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <button type="button" class="btn btn-primary btn-full">
+              <span class="material-symbols-outlined" aria-hidden="true">confirmation_number</span>
+              <span>Acessar Voucher</span>
+            </button>
+          </footer>
+        </article>
+
+        <!-- CARD 3: Experiência / Guia -->
+        <article class="travel-card" aria-labelledby="card-guia-title">
+          <div class="card-content-top">
+            <header class="card-header">
+              <span class="badge badge-warning">Agendado</span>
+              <span class="card-category">Experiência</span>
+            </header>
+
+            <div class="card-headline">
+              <h2 id="card-guia-title" class="card-title">Guia Marco Rossi</h2>
+              <p class="card-subtitle">Tour Histórico Costa Amalfitana</p>
+            </div>
+
+            <section class="card-details-box" aria-label="Detalhes da experiência">
+              <span class="detail-label">Data &amp; Duração</span>
+              <strong class="detail-value">14 Out às 10:00 (5 horas)</strong>
+            </section>
+
+            <div class="card-footer-info">
+              <span class="card-footer-label">Encontro:</span>
+              <strong class="card-footer-value">Piazza del Duomo</strong>
+            </div>
+          </div>
+
+          <footer class="card-footer">
+            <button type="button" class="btn btn-secondary btn-full">
+              <span class="material-symbols-outlined" aria-hidden="true">chat</span>
+              <span>Falar com Guia</span>
+            </button>
+          </footer>
+        </article>
+
+      </section>
+
+    </main>
+  </div>
+
+</body>
+</html>

@@ -32,7 +32,7 @@ h2{
     padding: 1rem;
 }
 
-/*mobile first*/
+/* Mobile first: abaixo do breakpoint, o fluxo padrão mantém conteúdo e sidebar empilhados. */
 
 .content, .sidebar{
     background-color: var(--bg-card);
@@ -41,19 +41,28 @@ h2{
     border-radius: 8px;
 }
 
-/* adaptação à telas mais largas*/
 
+/* 
+    Aplica o layout em grid somente quando a viewport tem pelo menos 775px de largura. 
+    Em telas a partir do breakpoint, conteúdo e sidebar passam a ocupar colunas do grid. 
+*/
 @media (min-width: 775px){
     .container{
-        display: grid;
-        grid-template-columns: repeat(12, minmax(0, 1fr)); /*1fr = 1/12*/
-        gap: 1rem; 
-        max-width: 1200px;
+        display: grid; 
+            /* Organiza os elementos filhos (dentro do container) em linhas e colunas. */
+        grid-template-columns: repeat(12, minmax(0, 1fr)); 
+            /* Cria 12 colunas iguais; minmax(0, 1fr) permite que encolham sem exceder o container. */
+
+        gap: 1rem; /* Espaçamento entre as linhas e colunas do grid. */
+        max-width: 1200px; 
+            /* Limita a largura em telas grandes para evitar conteúdo excessivamente largo. */
     }
     .content{
-        grid-column: span 8;
+        grid-column: span 8; 
+            /* Ocupa 8 das 12 colunas (dois terços da largura disponível). */
     }
     .sidebar{
-        grid-column: span 4;
+        grid-column: span 4; 
+            /* Ocupa 4 das 12 colunas (um terço da largura disponível). */
     }
 }

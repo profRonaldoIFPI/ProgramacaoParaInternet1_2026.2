@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atividade de CSS - Tela de Login Voya Travel">
+  <title>VOYA Travel | Entrar</title>
+  
+  <!-- Fontes Google & Ícones -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Folha de Estilos da Atividade -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+  <!-- Imagem de Fundo & Camada de Overlay -->
+  <figure class="login-bg-container">
+    <img src="img/fundo-login.jpg" alt="Costa da Itália com mar azul turquesa e montanhas" class="login-bg-image">
+    <div class="login-overlay" aria-hidden="true"></div>
+  </figure>
+
+  <!-- Conteúdo Principal / Card de Autenticação -->
+  <main class="login-container">
+    <section class="login-card" aria-labelledby="login-heading">
+      
+      <!-- Cabeçalho da Identidade Visual -->
+      <header class="brand-header">
+        <div class="brand-icon" aria-hidden="true">V</div>
+        <span class="brand-name">VOYA Travel</span>
+      </header>
+
+      <!-- Apresentação da Tela -->
+      <div class="login-intro">
+        <h1 id="login-heading" class="login-title">Entrar</h1>
+        <p class="login-subtitle">Acesse sua conta com suas credenciais.</p>
+      </div>
+
+      <!-- Formulário Semântico de Acesso -->
+      <form action="dashboard.html" method="GET" class="login-form">
+        
+        <!-- Campo: E-mail / Usuário -->
+        <div class="form-group">
+          <label for="username" class="form-label">E-mail ou Usuário</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            class="form-input" 
+            placeholder="seu.email@exemplo.com" 
+            required
+            autocomplete="username"
+          >
+        </div>
+
+        <!-- Campo: Senha -->
+        <div class="form-group">
+          <div class="form-row-between">
+            <label for="password" class="form-label">Senha</label>
+            <a href="#" class="form-link">Esqueci minha senha</a>
+          </div>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            class="form-input" 
+            placeholder="Sua senha secreta" 
+            required
+            autocomplete="current-password"
+          >
+        </div>
+
+        <!-- Botão de Ação Principal -->
+        <button type="submit" class="btn btn-primary btn-full">
+          Entrar
+        </button>
+
+      </form>
+
+      <!-- Divisor Semântico -->
+      <div class="divider" role="separator" aria-label="Ou opções alternativas de login">
+        <span class="divider-text">Ou continue com</span>
+      </div>
+
+      <!-- Opções de Login Social -->
+      <nav class="social-buttons" aria-label="Autenticação por redes sociais">
+        <button type="button" class="btn-social">
+          <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.66v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.15z" fill="#4285F4"/>
+            <path d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.25 21.36 7.33 24 12 24z" fill="#34A853"/>
+            <path d="M5.28 14.27a7.22 7.22 0 0 1 0-4.54V6.58H1.25a11.98 11.98 0 0 0 0 10.84l4.03-3.15z" fill="#FBBC05"/>
+            <path d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.25 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z" fill="#EA4335"/>
+          </svg>
+          Google
+        </button>
+
+        <button type="button" class="btn-social">
+          <svg class="social-icon" viewBox="0 0 24 24" fill="#1877F2" aria-hidden="true">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+          Facebook
+        </button>
+      </nav>
+
+      <!-- Rodapé do Card -->
+      <footer class="login-footer">
+        <p class="signup-prompt">
+          Não tem conta? <a href="#" class="form-link">Criar uma conta</a>
+        </p>
+        <p class="login-copyright">
+          © 2025 Voya Travel. Todos os direitos reservados.
+        </p>
+      </footer>
+
+    </section>
+  </main>
+
+</body>
+</html>

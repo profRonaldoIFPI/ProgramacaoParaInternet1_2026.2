@@ -1,0 +1,399 @@
+/* ==========================================================================
+   ATIVIDADE PRÁTICA DE CSS - PROGRAMAÇÃO PARA INTERNET 1 (IFPI)
+   Aluno(a): ________________________________________________________________
+   Tema: Modern Horizon / Voya Travel (Páginas: login.html e dashboard.html)
+   
+   INSTRUÇÕES GERAIS:
+   - Os arquivos HTML (login.html e dashboard.html) já possuem marcação semântica e classes.
+   - Utilize as Variáveis CSS declaradas no :root para padronizar cores, espaçamentos e fontes.
+   - Consulte os mockups de referência na pasta img/ (preview-login.png e preview-dashboard.png).
+   - Implemente as propriedades solicitadas em cada bloco abaixo.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. VARIÁVEIS & DESIGN TOKENS (Fornecidos para a atividade)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Cores Primárias */
+  --color-primary: #006591;
+  --color-primary-hover: #004c6e;
+  --color-primary-container: #0ea5e9;
+  --color-on-primary: #ffffff;
+
+  /* Superfícies & Fundos */
+  --color-surface: #f7f9fb;
+  --color-surface-card: #ffffff;
+  --color-surface-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-high: #e6e8ea;
+  --color-inverse-surface: #2d3133;
+  --color-inverse-on-surface: #eff1f3;
+
+  /* Textos & Bordas */
+  --color-text-main: #191c1e;
+  --color-text-muted: #6e7881;
+  --color-outline: #bec8d2;
+  --color-border-subtle: rgba(224, 227, 229, 0.7);
+
+  /* Status & Badges */
+  --badge-success-bg: #ecfdf5;
+  --badge-success-text: #047857;
+  --badge-info-bg: #f0f9ff;
+  --badge-info-text: #0369a1;
+  --badge-warning-bg: #fffbeb;
+  --badge-warning-text: #b45309;
+
+  /* Tipografia */
+  --font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Espaçamentos */
+  --space-xs: 0.25rem;  /* 4px */
+  --space-sm: 0.5rem;   /* 8px */
+  --space-md: 1rem;     /* 16px */
+  --space-lg: 1.5rem;   /* 24px */
+  --space-xl: 2.5rem;   /* 40px */
+
+  /* Raios de Arredondamento */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+  --radius-full: 9999px;
+
+  /* Sombras */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.06);
+  --shadow-card: 0 20px 40px -15px rgba(15, 23, 42, 0.18);
+  --shadow-glow: 0 4px 14px rgba(14, 165, 233, 0.3);
+
+  /* Transições */
+  --transition-fast: 0.2s ease;
+}
+
+/* --------------------------------------------------------------------------
+   2. RESET & ESTILOS GLOBAIS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-surface);
+  color: var(--color-text-main);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ==========================================================================
+   TAREFA 1: COMPONENTES GLOBAIS (Botões e Badges)
+   ========================================================================== */
+
+/* Estilize a classe base de botão (.btn) com display inline-flex, alinhamento central, padding, border-radius e cursor pointer */
+.btn {
+  /* [ALUNO]: Escreva suas regras aqui */
+}
+
+/* Botão Primário (.btn-primary) com cor de fundo --color-primary e texto --color-on-primary */
+.btn-primary {
+  /* [ALUNO]: Escreva suas regras aqui */
+}
+
+.btn-primary:hover {
+  /* [ALUNO]: Efeito hover (ex: mudança de cor de fundo e leve translateY) */
+}
+
+/* Botão Secundário (.btn-secondary) com cor de fundo --color-surface-container */
+.btn-secondary {
+  /* [ALUNO]: Escreva suas regras aqui */
+}
+
+/* Botão ocupando 100% da largura (.btn-full) */
+.btn-full {
+  width: 100%;
+}
+
+/* Badges (.badge, .badge-success, .badge-info, .badge-warning) */
+.badge {
+  /* [ALUNO]: Escreva suas regras aqui */
+}
+
+.badge-success {
+  /* [ALUNO]: Fundo --badge-success-bg e texto --badge-success-text */
+}
+
+.badge-info {
+  /* [ALUNO]: Fundo --badge-info-bg e texto --badge-info-text */
+}
+
+.badge-warning {
+  /* [ALUNO]: Fundo --badge-warning-bg e texto --badge-warning-text */
+}
+
+
+/* ==========================================================================
+   TAREFA 2: TELA DE LOGIN (login.html)
+   ========================================================================== */
+
+/* Estilize o corpo da tela de login (.login-body) com min-height 100vh e alinhamento flexível */
+.login-body {
+  /* [ALUNO]: Escreva suas regras aqui */
+}
+
+/* Container da Imagem de Fundo e Camada Overlay (.login-bg-container, .login-bg-image, .login-overlay) */
+.login-bg-container {
+  /* [ALUNO]: Posicionamento absoluto ocupando 100% da tela */
+}
+
+.login-bg-image {
+  /* [ALUNO]: Ajuste de largura, altura e object-fit cover */
+}
+
+.login-overlay {
+  /* [ALUNO]: Camada escura com transparência e backdrop-filter sobre a imagem */
+}
+
+/* Container do Login (.login-container) e Card com Glassmorphism (.login-card) */
+.login-container {
+  /* [ALUNO]: Posicionamento acima do overlay (z-index) e largura máxima */
+}
+
+.login-card {
+  /* [ALUNO]: Fundo semi-transparente, backdrop-filter blur, bordas arredondadas e sombra */
+}
+
+/* Identidade Visual (.brand-header, .brand-icon, .brand-name) */
+.brand-header {
+  /* [ALUNO]: Flexbox com gap entre o ícone e o nome */
+}
+
+.brand-icon {
+  /* [ALUNO]: Quadrado arredondado com gradiente e letra 'V' centralizada */
+}
+
+.brand-name {
+  /* [ALUNO]: Tipografia com peso bold */
+}
+
+/* Título e Subtítulo (.login-intro, .login-title, .login-subtitle) */
+.login-intro {
+  /* [ALUNO]: Espaçamento inferior */
+}
+
+.login-title {
+  /* [ALUNO]: Tamanho da fonte e peso */
+}
+
+.login-subtitle {
+  /* [ALUNO]: Cor secundária de texto */
+}
+
+/* Campos do Formulário (.form-group, .form-label, .form-input) */
+.form-group {
+  /* [ALUNO]: Margem inferior */
+}
+
+.form-label {
+  /* [ALUNO]: Exibição em bloco, peso da fonte e cor */
+}
+
+.form-row-between {
+  /* [ALUNO]: Flexbox com justify-content: space-between */
+}
+
+.form-input {
+  /* [ALUNO]: Altura, padding interno, fundo --color-surface-low, borda e transição */
+}
+
+.form-input:focus {
+  /* [ALUNO]: Estilo de foco com cor de borda e outline/box-shadow */
+}
+
+.form-link {
+  /* [ALUNO]: Cor de destaque e tamanho de fonte */
+}
+
+/* Divisor (.divider, .divider-text) */
+.divider {
+  /* [ALUNO]: Linha divisória horizontal */
+}
+
+.divider-text {
+  /* [ALUNO]: Texto 'Ou continue com' centralizado sobre a linha */
+}
+
+/* Botões de Redes Sociais (.social-buttons, .btn-social) */
+.social-buttons {
+  /* [ALUNO]: Grid com 2 colunas */
+}
+
+.btn-social {
+  /* [ALUNO]: Botão com ícone e texto centralizados */
+}
+
+/* Rodapé do Card (.login-footer, .signup-prompt, .login-copyright) */
+.login-footer {
+  /* [ALUNO]: Alinhamento central e espaçamentos */
+}
+
+
+/* ==========================================================================
+   TAREFA 3: TELA DE DASHBOARD (dashboard.html)
+   ========================================================================== */
+
+/* Layout Geral (.dashboard-layout) */
+.dashboard-layout {
+  /* [ALUNO]: Display flex para posicionar a sidebar e a área principal */
+}
+
+/* Sidebar Fixa (.sidebar, .sidebar-header, .sidebar-logo, .sidebar-brand-title) */
+.sidebar {
+  /* [ALUNO]: Posição fixa à esquerda (position: fixed, top 0, left 0, bottom 0, width 270px) */
+  /* [ALUNO]: Cor de fundo escura (--color-inverse-surface) e padding */
+}
+
+.sidebar-header {
+  /* [ALUNO]: Alinhamento horizontal da logo e título */
+}
+
+.sidebar-logo {
+  /* [ALUNO]: Altura da imagem da logo */
+}
+
+/* Navegação da Sidebar (.sidebar-nav, .nav-link, .nav-link.active) */
+.sidebar-nav {
+  /* [ALUNO]: Lista vertical sem marcadores (list-style: none) */
+}
+
+.nav-link {
+  /* [ALUNO]: Flexbox com ícone e texto, padding, border-radius e transição hover */
+}
+
+.nav-link:hover {
+  /* [ALUNO]: Fundo sutil ao passar o mouse */
+}
+
+.nav-link.active {
+  /* [ALUNO]: Destaque do link ativo com cor primária e sombra brilhante */
+}
+
+/* Rodapé da Sidebar com Usuário (.sidebar-footer, .user-badge, .user-avatar, .btn-icon-logout) */
+.sidebar-footer {
+  /* [ALUNO]: Borda superior e padding */
+}
+
+.user-badge {
+  /* [ALUNO]: Flexbox alinhando avatar, nome e botão de logout */
+}
+
+.user-avatar {
+  /* [ALUNO]: Imagem circular (border-radius: 50%) */
+}
+
+.btn-icon-logout {
+  /* [ALUNO]: Botão de ícone para logout */
+}
+
+/* Área Principal (.main-wrapper, .topbar, .content-area) */
+.main-wrapper {
+  /* [ALUNO]: Margem esquerda correspondente à largura da sidebar (margin-left: 270px) */
+}
+
+.topbar {
+  /* [ALUNO]: Barra superior fixa ou sticky com altura 64px, flexbox e alinhamento */
+}
+
+.topbar-actions {
+  /* [ALUNO]: Flexbox com botões de busca, notificação e perfil */
+}
+
+.icon-btn {
+  /* [ALUNO]: Botões circulares para ícones */
+}
+
+.content-area {
+  /* [ALUNO]: Padding interno para a área de conteúdo */
+}
+
+.content-header {
+  /* [ALUNO]: Margem inferior e títulos */
+}
+
+/* ==========================================================================
+   TAREFA 4: GRID DOS CARDS DE VIAGEM (CSS Grid)
+   ========================================================================== */
+
+/* Grid de Cards (.cards-grid) */
+.cards-grid {
+  /* [ALUNO]: Configure um CSS Grid com 3 colunas de larguras iguais (repeat(3, 1fr)) e gap */
+}
+
+/* Card Individual (.travel-card) */
+.travel-card {
+  /* [ALUNO]: Fundo branco, bordas arredondadas, padding, sombra e flexbox vertical */
+}
+
+.travel-card:hover {
+  /* [ALUNO]: Leve elevação com translateY e sombra reforçada */
+}
+
+.card-header {
+  /* [ALUNO]: Flexbox com justify-content: space-between para badge e categoria */
+}
+
+.card-headline {
+  /* [ALUNO]: Espaçamento para o título do destino/voo e subtítulo */
+}
+
+.card-title {
+  /* [ALUNO]: Tipografia do título do card */
+}
+
+.card-details-box {
+  /* [ALUNO]: Caixa interna destacada com fundo --color-surface-low e bordas arredondadas */
+}
+
+.card-footer-info {
+  /* [ALUNO]: Flexbox alinhando label e valor total */
+}
+
+.card-footer {
+  /* [ALUNO]: Área do botão de ação no final do card */
+}
+
+
+/* ==========================================================================
+   TAREFA 5: RESPONSIVIDADE (Media Queries)
+   ========================================================================== */
+
+/* Telas médias / Tablets (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .cards-grid {
+    /* [ALUNO]: Altere o grid para 2 colunas */
+  }
+}
+
+/* Dispositivos móveis (max-width: 768px) */
+@media (max-width: 768px) {
+  /* [ALUNO]: Ajuste o container de login para preencher a largura */
+
+  /* [ALUNO]: Oculte ou adapte a sidebar e remova o margin-left do main-wrapper */
+
+  /* [ALUNO]: Altere o grid dos cards para 1 coluna */
+}
